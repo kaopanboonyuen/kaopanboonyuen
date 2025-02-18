@@ -14,9 +14,21 @@
             color: #333;
             background-color: #fafafa;
         }
+        .language-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1em;
+        }
+        .language-switch a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #007acc;
+            font-weight: bold;
+        }
         .container {
             max-width: 900px;
-            margin: 40px auto;
+            margin: 60px auto 40px;
             padding: 20px;
             text-align: center;
         }
@@ -60,60 +72,63 @@
             transition: transform 0.3s;
         }
         .links a i {
-        font-size: 2em; /* Resize all the icons here */
+            font-size: 2em;
         }
         .links a:hover {
             transform: scale(1.1);
         }
-
         @keyframes slideIn {
-            0% {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
-
         @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
 <body>
+    <div class="language-switch">
+        <a href="#" onclick="switchLanguage('th')">TH</a> | <a href="#" onclick="switchLanguage('en')">EN</a>
+    </div>
     <div class="container">
         <img src="img/panboonyuen_v1.jpg" alt="ธีรพงศ์ ปานบุญยืน" class="profile-pic">
-        <div class="name">ธีรพงศ์ ปานบุญยืน</div>
-        <div class="subtitle">Ph.D. in AI, Chula</div>
+        <div class="name" id="name">ธีรพงศ์ ปานบุญยืน</div>
+        <div class="subtitle" id="subtitle">Ph.D. in AI, Chula</div>
 
-        <div class="bio">
+        <div class="bio" id="bio">
             ดร.ธีรพงศ์ ปานบุญยืน (ดร.เก้า) เป็นนักวิจัยและนักพัฒนาปัญญาประดิษฐ์ที่ MARS (Motor AI Recognition Solution) และนักวิจัยหลังปริญญาเอกที่จุฬาลงกรณ์มหาวิทยาลัย งานวิจัยของ ดร.เก้า มุ่งเน้นไปที่การเรียนรู้เชิงแทนความหมาย (Representation Learning) ทฤษฎีการหาค่าที่เหมาะสมที่สุด (Optimization Theory) และการเรียนรู้แบบไร้ผู้สอน (Self-Supervised Learning) โดยเฉพาะอย่างยิ่งในสาขาการประมวลผลภาพ (Computer Vision) และปัญญาภูมิศาสตร์ (Geospatial Intelligence) รวมถึงความสัมพันธ์ระหว่างมนุษย์กับ AI (Human-AI Interaction) ที่กําลังเปลี่ยนโฉมหน้าวงการเทคโนโลยีในปัจจุบัน
         </div>
 
         <div class="links">
             <a href="https://kaopanboonyuen.github.io/" target="_blank"><i class="fa-solid fa-house"></i></a>
-            <!-- <a href="mailto:teerapong.panboonyuen@gmail.com"><i class="fa-solid fa-envelope"></i></a> -->
             <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
             <a href="https://x.com/kaopanboonyuen" target="_blank"><i class="fa-brands fa-twitter"></i></a>
             <a href="https://github.com/kaopanboonyuen" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="https://www.linkedin.com/in/teerapong-panboonyuen" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <!-- <a href="https://kaopanboonyuen.github.io/files/panboonyuen_cv.pdf" target="_blank"><i class="fa-solid fa-file"></i></a> -->
         </div>
-        <!-- <div class="links">
-            <a href="mailto:teerapong.panboonyuen@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-            <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank"><i class="fa-solid fa-graduation-cap"></i> Scholar</a>
-            <a href="https://x.com/kaopanboonyuen" target="_blank"><i class="fa-brands fa-twitter"></i> X</a>
-            <a href="https://github.com/kaopanboonyuen" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/teerapong-panboonyuen" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-            <a href="https://kaopanboonyuen.github.io/files/panboonyuen_cv.pdf" target="_blank"><i class="fa-solid fa-file"></i> CV</a>
-        </div> -->
     </div>
+
+    <script>
+        const translations = {
+            th: {
+                name: "ธีรพงศ์ ปานบุญยืน",
+                subtitle: "Ph.D. in AI, Chula",
+                bio: "ดร.ธีรพงศ์ ปานบุญยืน (ดร.เก้า) เป็นนักวิจัยและนักพัฒนาปัญญาประดิษฐ์ที่ MARS (Motor AI Recognition Solution) และนักวิจัยหลังปริญญาเอกที่จุฬาลงกรณ์มหาวิทยาลัย งานวิจัยของ ดร.เก้า มุ่งเน้นไปที่การเรียนรู้เชิงแทนความหมาย (Representation Learning) ทฤษฎีการหาค่าที่เหมาะสมที่สุด (Optimization Theory) และการเรียนรู้แบบไร้ผู้สอน (Self-Supervised Learning) โดยเฉพาะอย่างยิ่งในสาขาการประมวลผลภาพ (Computer Vision) และปัญญาภูมิศาสตร์ (Geospatial Intelligence) รวมถึงความสัมพันธ์ระหว่างมนุษย์กับ AI (Human-AI Interaction) ที่กําลังเปลี่ยนโฉมหน้าวงการเทคโนโลยีในปัจจุบัน"
+            },
+            en: {
+                name: "Teerapong Panboonyuen",
+                subtitle: "Ph.D. in AI, Chula",
+                bio: "Dr. Teerapong Panboonyuen (Dr. Kao) is an AI researcher and developer at MARS (Motor AI Recognition Solution) and a Postdoctoral Fellow at Chulalongkorn University. His research focuses on Representation Learning, Optimization Theory, and Self-Supervised Learning, with applications in Computer Vision and Geospatial Intelligence. He is particularly interested in exploring Human-AI Interaction to shape the future of technology."
+            }
+        };
+
+        function switchLanguage(lang) {
+            document.getElementById('name').innerText = translations[lang].name;
+            document.getElementById('subtitle').innerText = translations[lang].subtitle;
+            document.getElementById('bio').innerText = translations[lang].bio;
+            document.documentElement.lang = lang;
+        }
+    </script>
 </body>
 </html>
