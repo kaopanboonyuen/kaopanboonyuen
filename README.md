@@ -1,7 +1,4 @@
-## Hey 👋 I’m Kao! 
-
-Hope you find something awesome here! 😊
-
+🌱
 <!--
 **kaopanboonyuen/kaopanboonyuen** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
