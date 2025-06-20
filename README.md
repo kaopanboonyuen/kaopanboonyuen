@@ -1,1 +1,1 @@
-🔍 **What I Do:** 👉 [📚 Google Scholar - Panboonyuen](https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en){:target="_blank"}
+🔍 **What I Do:** 👉 [Google Scholar - Panboonyuen](https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en)
