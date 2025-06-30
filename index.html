@@ -89,14 +89,16 @@
 <body>
   <header>
     <h1>🐟 PBY Laboratory</h1>
-    <p>Perception-Based Yonder — Exploring AI for a Better World Beyond Today</p>
+    <p>Perception-Based Yonder</p>
+    <p>Building AI for a Healthier Earth</p>
   </header>
 
 
 
 
 
-<section class="section" style="max-width: 900px; margin: 2rem auto; padding: 1rem;">
+
+  <section class="section" style="max-width: 900px; margin: 2rem auto; padding: 1rem;">
   <!-- Language toggle button -->
   <div style="text-align: right; margin-bottom: 1.5rem;">
     <button 
@@ -122,25 +124,24 @@
 
   <h2 style="font-weight: 800; font-size: 2.2rem; margin-bottom: 2rem; color: #111;">👤 Lab Head</h2>
 
-  <div style="display: flex; gap: 3rem; align-items: center;">
+  <div style="display: flex; gap: 3rem; align-items: center; flex-wrap: wrap;">
     <!-- Fixed size image on left -->
     <img 
-  src="img/KAO_PANBOONYUEN.jpg" 
-  alt="Dr. Teerapong Panboonyuen" 
-  style="
-    width: 320px; 
-    height: 320px; 
-    object-fit: cover; 
-    border-radius: 20px; 
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-    flex-shrink: 0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: default;
-  "
-  onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 18px 36px rgba(0, 0, 0, 0.18)';"
-  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 12px 24px rgba(0, 0, 0, 0.12)';"
-/>
-
+      src="img/KAO_PANBOONYUEN.jpg" 
+      alt="Dr. Teerapong Panboonyuen" 
+      style="
+        width: 320px; 
+        height: 320px; 
+        object-fit: cover; 
+        border-radius: 20px; 
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        flex-shrink: 0;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: default;
+      "
+      onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 18px 36px rgba(0, 0, 0, 0.18)';"
+      onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 12px 24px rgba(0, 0, 0, 0.12)';"
+    />
 
     <!-- Text container -->
     <div style="flex: 1; min-width: 0;">
@@ -184,7 +185,7 @@
           onclick="window.location.href='KAO/'" 
           onmouseover="this.style.textDecoration='underline'" 
           onmouseout="this.style.textDecoration='none'">
-          Teerapong Panboonyuen (Dr. Kao)
+          Teerapong Panboonyuen
         </h3>
         <p style="font-weight: 700; font-size: 1.1rem; margin: 0 0 0.7rem; color: #444;">Ph.D. in Computer Engineering, Chulalongkorn University</p>
         <p style="font-size: 1rem; line-height: 1.65; color: #555; text-align: justify;">
@@ -238,6 +239,51 @@
   }
 </script>
 
+<style>
+  /* Responsive styles for small screens */
+  @media screen and (max-width: 768px) {
+    .section {
+      padding: 1rem;
+    }
+
+    /* Stack image above text on mobile */
+    .section > div {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    /* Adjust image size and margins for mobile */
+    .section img {
+      width: 250px;
+      height: 250px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Adjust text container for mobile */
+    .section div {
+      padding: 0;
+    }
+
+    /* Reduce font sizes for mobile */
+    .section h2 {
+      font-size: 1.8rem;
+    }
+
+    .section h3 {
+      font-size: 1.4rem;
+    }
+
+    .section p {
+      font-size: 0.95rem;
+    }
+
+    .section a {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+
 
 
 
@@ -253,7 +299,7 @@
     <a href="https://arxiv.org/abs/2506.10528" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -263,7 +309,7 @@
   <div class="buttons">
     <a href="https://arxiv.org/abs/2506.10524" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-    <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
+    <!-- <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a> -->
     <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
   </div>
 </div>
@@ -275,7 +321,7 @@
     <a href="https://ieeexplore.ieee.org/document/11003320" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -285,7 +331,7 @@
   <div class="buttons">
     <a href="https://ieeexplore.ieee.org/document/11003314" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-    <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
+    <!-- <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a> -->
     <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
   </div>
 </div>
@@ -297,7 +343,7 @@
     <a href="https://ieeexplore.ieee.org/document/10929005" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -307,7 +353,7 @@
   <div class="buttons">
     <a href="https://kaopanboonyuen.github.io/GuidedBox" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-    <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
+    <!-- <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a> -->
     <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
   </div>
 </div>
@@ -318,7 +364,7 @@
   <div class="buttons">
     <a href="https://www.mdpi.com/2072-4292/15/21/5124" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-    <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
+    <!-- <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a> -->
     <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
   </div>
 </div>
@@ -329,7 +375,7 @@
   <div class="buttons">
     <a href="https://link.springer.com/chapter/10.1007/978-3-031-51023-6_3" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-    <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
+    <!-- <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a> -->
     <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
   </div>
 </div>
@@ -340,7 +386,7 @@
   <div class="buttons">
     <a href="https://digital.car.chula.ac.th/chulaetd/8534/" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-    <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
+    <!-- <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a> -->
     <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
   </div>
 </div>
@@ -351,7 +397,7 @@
   <div class="buttons">
     <a href="https://www.car.chula.ac.th/display7.php?bib=2156287" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-    <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
+    <!-- <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a> -->
     <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
   </div>
 </div>
@@ -363,7 +409,7 @@
     <a href="https://www.mdpi.com/2078-2489/13/1/5" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -374,7 +420,7 @@
     <a href="https://www.mdpi.com/2072-4292/13/24/5100" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -385,7 +431,7 @@
     <a href="https://www.mdpi.com/2072-4292/12/8/1233" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -396,7 +442,7 @@
     <a href="https://www.mdpi.com/2072-4292/11/1/83" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -407,7 +453,7 @@
     <a href="https://www.mdpi.com/2072-4292/9/7/680" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -418,7 +464,7 @@
     <a href="https://link.springer.com/chapter/10.1007/978-3-319-78933-7_1" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -429,7 +475,7 @@
     <a href="https://link.springer.com/chapter/10.1007/978-3-319-73603-7_32" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -440,7 +486,7 @@
     <a href="https://tis.wu.ac.th/index.php/tis/article/view/2038" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -451,7 +497,7 @@
     <a href="https://ieeexplore.ieee.org/document/8258330" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -462,7 +508,7 @@
     <a href="https://ieeexplore.ieee.org/document/8457378" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -473,7 +519,7 @@
     <a href="https://ieeexplore.ieee.org/document/9018796" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -484,7 +530,7 @@
     <a href="https://www.mdpi.com/2078-2489/13/5/259" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -495,7 +541,7 @@
     <a href="https://ieeexplore.ieee.org/document/9779212" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -506,7 +552,7 @@
     <a href="https://www.mdpi.com/2071-1050/15/3/2847" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -517,7 +563,7 @@
     <a href="https://gis-ideas.org/2024" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -528,7 +574,7 @@
     <a href="https://ieeexplore.ieee.org/document/10456962" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
@@ -539,7 +585,7 @@
     <a href="https://ieeexplore.ieee.org/document/12345678" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-    <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
 
