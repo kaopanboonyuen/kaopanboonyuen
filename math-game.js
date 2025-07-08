@@ -273,7 +273,27 @@ function startGame() {
   date => `${date} is yours to shape 🛠️✨. Stay strong and stay kind ❤️🤝.`,
   date => `Embrace the pace of progress this ${date} 🐢➡️🐇. One step at a time!`,
   date => `Sending you good vibes and steady focus this ${date} ✨🎯.`,
-  date => `Let ${date} be a gentle reminder that you're capable of amazing things 🌟💖.`
+  date => `Let ${date} be a gentle reminder that you're capable of amazing things 🌟💖.`,
+  date => `🌟 Rise and shine! ${date} is here to bring you endless possibilities and joyful moments 🌈✨.`,
+  date => `Good vibes only this ${date}! Let your passion light up the day like fireworks 🎆🔥.`,
+  date => `Cheers to ${date}! May your energy be as unstoppable as a comet streaking across the sky ☄️🚀.`,
+  date => `Hello ${date}! Step boldly into today with a heart full of courage and a smile that lights up the room 😄💫.`,
+  date => `🌺 On this lovely ${date}, nurture your dreams and watch them bloom into reality 🌸🌻.`,
+  date => `Keep your head high and spirits higher this ${date} — you’re making magic happen ✨🪄.`,
+  date => `It’s ${date}, the perfect day to sparkle and show the world your unique brilliance ✨🌟.`,
+  date => `Sending you a sunshine-filled ${date} ☀️ and a breeze of calm to carry you through with ease 🍃💨.`,
+  date => `Every moment of ${date} is a gift wrapped in hope, courage, and smiles 🎁😊. Unwrap it fully!`,
+  date => `💪 Power through this ${date} with unstoppable confidence and a heart full of gratitude 🙌❤️.`,
+  date => `Today’s ${date} mission: embrace challenges like a hero and celebrate every victory 🦸‍♀️🏅.`,
+  date => `🌈 Let the colors of ${date} brighten your soul and inspire your every step 🎨👣.`,
+  date => `Wishing you a sparkling ${date} filled with laughter, learning, and limitless potential 😄📚🚀.`,
+  date => `Open your arms wide for ${date} — a day ready to fill you with joy, growth, and endless possibility 🤗🌱.`,
+  date => `Smile big this ${date}! Your enthusiasm is contagious and your energy unstoppable 😁⚡.`,
+  date => `🌟 Shine bright like a diamond today, ${date}. Your unique light makes the world better 💎✨.`,
+  date => `May ${date} be sprinkled with kindness, courage, and countless moments that make your heart sing 🎶💖.`,
+  date => `💫 Today’s ${date} vibes: dream big, work hard, and enjoy every step of your incredible journey 🚀🌍.`,
+  date => `Feel the power of possibility on this ${date}. You have everything it takes to turn dreams into reality 🌟🛤️.`,
+  date => `Happy ${date}! Keep your spirit fierce, your smile wide, and your heart open to wonder 🦋😊✨.`
 ];
 
 
