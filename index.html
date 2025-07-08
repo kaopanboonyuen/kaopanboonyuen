@@ -172,10 +172,10 @@
 
   <h2 style="font-weight: 800; font-size: 2.2rem; margin-bottom: 2rem; color: #111;">👤 Lab Head</h2>
 
-  <div style="display: flex; gap: 3rem; align-items: center; flex-wrap: wrap;">
-    <!-- Fixed size image on left -->
-   <a id="image-link" href="#">
-  <img 
+<div style="display: flex; gap: 3rem; align-items: center; flex-wrap: wrap;">
+  <!-- Fixed size image on left -->
+  <a id="image-link" href="#">
+    <img 
       src="img/teerapong-panboonyuen-ธีรพงศ์-ปานบุญยืน.jpg" 
       alt="ดร.ธีรพงศ์ ปานบุญยืน" 
       style="
@@ -191,16 +191,20 @@
       onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 18px 36px rgba(0, 0, 0, 0.18)';"
       onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 12px 24px rgba(0, 0, 0, 0.12)';"
     />
-</a>
+  </a>
+</div>
 
 <script>
   // Dynamically get the current domain and construct the URL
-  const domain = window.location.origin;  // This will get the full domain (e.g., https://pbylab.github.io)
-  const url = `${domain}/teerapong-panboonyuen/`;
+  const domain = window.location.origin;  // This will get the full domain (e.g., https://kaopanboonyuen.github.io)
+  const path = "/teerapong-panboonyuen/";  // The relative path you want to navigate to
 
   // Set the href of the anchor tag dynamically
   const imageLink = document.getElementById('image-link');
-  imageLink.href = url;  // Set the link dynamically
+  
+  // Only append the relative path
+  imageLink.href = domain + path;  // Correct URL structure
+
 </script>
 
 
