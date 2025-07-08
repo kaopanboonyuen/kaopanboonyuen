@@ -1,14 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- <title>Teerapong Panboonyuen — PBY Lab</title> -->
-  <title>ธีรพงศ์ ปานบุญยืน | Research Scientist - PBY Lab</title>
-  
-  <!-- Favicon with tree emoji -->
-  <!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><text y=%2224%22 font-size=%2232%22>🐟</text></svg>" /> -->
- <link rel="icon" type="image/svg+xml" href="../img/Fish_PBYLab_v2.svg" />
+  <title>PBY Lab - Perception-Based Yonder</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Favicon with tree emoji SVG -->
+  <!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><text y=%2224%22 font-size=%2232%22>🐟</text></svg>" /> -->
+<!-- <link rel="icon" type="image/png" href="img/PBYLab_Logo.png" /> -->
+ <link rel="icon" type="image/svg+xml" href="img/Fish_PBYLab_v2.svg" />
+
+<!-- Open Graph for Facebook, LinkedIn, etc. -->
+<meta property="og:image" content="https://pbylab.github.io/img/PBYLab_Logo.png" />
+<meta property="og:title" content="PBY Lab - Perception-Based Yonder" />
+<meta property="og:description" content="Building AI for a Healthier Earth - PBY Lab" />
+<meta property="og:url" content="https://pbylab.github.io/" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="PBY Lab - Perception-Based Yonder" />
+<meta name="twitter:description" content="Building AI for a Healthier Earth - PBY Lab" />
+<meta name="twitter:image" content="https://pbylab.github.io/img/PBYLab_Logo.png" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "PBY Lab",
+  "url": "https://pbylab.github.io/",
+  "logo": "https://pbylab.github.io/img/PBYLab_Logo.png"
+}
+</script>
+
 
 <script type="application/ld+json">
 {
@@ -31,172 +55,318 @@
 }
 </script>
 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f9fafb;
-      color: #1f2937;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 2rem;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    header h1 {
-      color: black;
-      font-size: 2.5rem;
-      margin-bottom: 0.2rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #4b5563;
-    }
-    .profile-pic {
-      display: block;
-      margin: 0 auto 2rem;
-      width: 320px;
-      border-radius: 1.5rem;
-      box-shadow: default;
-      transition: transform 0.3s ease;
-    }
-    .profile-pic:hover {
-      transform: scale(1.05);
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    h2 {
-      color: #0f172a;
-      border-bottom: 3px solid #2563eb;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .back-link {
-      text-align: center;
-      margin-top: 3rem;
-    }
-    .bio-en {
-      margin-top: 1.5rem;
-      background-color: #f3f4f6;
-      padding: 1rem;
-      border-left: 4px solid #2563eb;
-    }
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background-color: #f9fafb;
+}
+
+header {
+  background-color: #0f172a;
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.25rem;
+  color: #cbd5e1;
+}
+
+.section {
+  padding: 3rem 2rem;
+  max-width: 960px;
+  margin: auto;
+}
+
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile img {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 0; /* Square corners */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); /* Optional: Keep shadow for depth */
+  cursor: default; /* Prevent hover pointer */
+  transition: none; /* Disable any transition effects */
+}
+
+.profile-info {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;
+}
+
+.profile-info h3 {
+  margin: 0 0 1rem;
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: #2563eb;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.profile-info h3:hover {
+  color: #1d4ed8;
+}
+
+.publications ul {
+  list-style: none;
+  padding: 0;
+}
+
+.publications li {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
   </style>
 </head>
-
 <body>
-
-  <!-- TOP LEFT BACK BUTTON -->
-  <div class="back-top-left">
-    <a href="/" title="Back to main page">← Back to Home</a>
-  </div>
-  
   <header>
-    <h1>ธีรพงศ์ ปานบุญยืน (ดร.เก้า)</h1>
-    <p>Ph.D. in Computer Engineering, Chulalongkorn University</p>
+    <!-- <h1>🐟 PBY Laboratory</h1> -->
+     <h1><img src="img/Fish_PBYLab_v2.svg" alt="Fish logo" style="height: 1em; vertical-align: middle;"> PBY Laboratory</h1>
+    <p>Perception-Based Yonder</p>
+    <p>Building AI for a Healthier Earth</p>
   </header>
 
 
-<!-- Link to math-game.js file -->
-<script src="../math-game.js" defer></script>
 
 
-  <div style="display: flex; justify-content: center; margin-top: 3rem; padding: 0 1rem;">
+
+
+  <section class="section" style="max-width: 900px; margin: 2rem auto; padding: 1rem;">
+  <!-- Language toggle button -->
+  <div style="text-align: right; margin-bottom: 1.5rem;">
+    <button 
+      id="langToggleBtn"
+      onclick="switchLanguage()" 
+      style="
+        padding: 0.6rem 1.2rem; 
+        background-color: #2563eb; 
+        color: white; 
+        border: none; 
+        border-radius: 10px; 
+        cursor: pointer; 
+        font-weight: 700;
+        font-size: 1.1rem;
+        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+        transition: background-color 0.3s ease;
+      "
+      onmouseover="this.style.backgroundColor='#1e40af'"
+      onmouseout="this.style.backgroundColor='#2563eb'">
+      Switch to English
+    </button>
+  </div>
+
+  <h2 style="font-weight: 800; font-size: 2.2rem; margin-bottom: 2rem; color: #111;">👤 Lab Head</h2>
+
+  <div style="display: flex; gap: 3rem; align-items: center; flex-wrap: wrap;">
+    <!-- Fixed size image on left -->
   <img 
-    src="../img/teerapong-panboonyuen-ธีรพงศ์-ปานบุญยืน.jpg" 
-    alt="Dr. Teerapong Panboonyuen" 
-    class="profile-pic"
-  
-    onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 12px 36px rgba(0,0,0,0.25)';"
-    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)';"
-    onclick="startGame()"
-  />
-</div>
+  src="img/teerapong-panboonyuen-ธีรพงศ์-ปานบุญยืน.jpg" 
+  alt="Dr. Teerapong Panboonyuen" 
+  style="
+    width: 320px; 
+    height: 320px; 
+    object-fit: cover; 
+    border-radius: 0;  /* Square corners */
+    box-shadow: none; /* Remove shadow */
+    flex-shrink: 0;
+    cursor: default; /* Prevent hover pointer */
+  "
+/>
 
 
-  <section>
-    <h2>Biography</h2>
-    <p style="text-align: justify;">
-      ดร.ธีรพงศ์ ปานบุญยืน หรือที่รู้จักกันในชื่อ “ดร.เก้า” เป็นนักวิจัยผู้มีความเชี่ยวชาญด้านปัญญาประดิษฐ์ โดยปัจจุบันดำรงตำแหน่งนักวิจัยหลักที่ MARSAIL (Motor AI Recognition Solution Artificial Intelligence Laboratory) ซึ่งเป็นห้องปฏิบัติการวิจัยแนวหน้าที่บูรณาการเทคโนโลยี AI กับอุตสาหกรรมประกันภัยรถยนต์<br /><br />
-      ในด้านการศึกษา ดร.เก้า สำเร็จการศึกษาระดับปริญญาเอก สาขาวิศวกรรมคอมพิวเตอร์ (วิศวกรรมศาสตรดุษฎีบัณฑิต) จากจุฬาลงกรณ์มหาวิทยาลัย โดยใช้ระยะเวลาเพียง 2 ปีครึ่ง ภายใต้การสนับสนุนทุนการศึกษาหลักสูตรดุษฎีบัณฑิต 100 ปีจุฬาลงกรณ์มหาวิทยาลัย และทุน 90 ปีจุฬาลงกรณ์มหาวิทยาลัย ก่อนหน้านี้ สำเร็จการศึกษาระดับปริญญาโทในสาขาเดียวกันจากจุฬาลงกรณ์มหาวิทยาลัยเช่นกัน ภายในระยะเวลา 1 ปีครึ่ง ภายใต้ทุนอุดหนุนการศึกษาระดับบัณฑิตศึกษาจุฬาลงกรณ์มหาวิทยาลัย เพื่อเฉลิมฉลองวโรกาสที่พระบาทสมเด็จพระเจ้าอยู่หัวทรงเจริญพระชนมายุครบ 72 พรรษา โดยสำเร็จการศึกษาระดับปริญญาเอกได้ในวัยเพียง 27 ปี ซึ่งสะท้อนถึงศักยภาพและความมุ่งมั่นในเส้นทางวิชาการอย่างชัดเจน<br /><br />
-      นอกจากนี้ ดร.เก้ายังได้รับการสนับสนุนทุนระดับสูงสุดจากโครงการ The Second Century Fund (C2F) ใน Track A สำหรับนักวิจัยหลังปริญญาเอกศักยภาพสูง ของจุฬาลงกรณ์มหาวิทยาลัย เพื่อสนับสนุนการวิจัยที่มีอิทธิพลและสร้างผลกระทบต่อวงการเทคโนโลยี AI/ML ในระดับโลก และเป็นหนึ่งในนักวิจัยไทยที่ได้รับพระมหากรุณาธิคุณรับพระราชทานทุน Global Young Scientists Summit (GYSS) ประจำปี 2025 จากสมเด็จพระกนิษฐาธิราชเจ้า กรมสมเด็จพระเทพรัตนราชสุดาฯ<br /><br />
-      ดร.เก้ามีความเชี่ยวชาญลึกซึ้งในสาขา Computer Vision ที่ประยุกต์ใช้กับการรู้จำวัตถุ ซีน และความเข้าใจเชิงความหมายของภาพ รวมถึง Geospatial Intelligence ที่วิเคราะห์ข้อมูลจากดาวเทียมและภาพถ่ายทางอากาศเพื่อสนับสนุนการตัดสินใจเชิงพื้นที่  
-      อีกทั้งยังให้ความสำคัญกับ Human-AI Interaction ซึ่งเป็นหัวใจสำคัญของการสร้างเทคโนโลยีที่เข้าใจและสื่อสารกับมนุษย์ได้อย่างมีประสิทธิภาพ ด้วยผลงานที่โดดเด่นและวิสัยทัศน์เชิงลึกในอนาคตของ AI ดร.เก้าจึงเป็นหนึ่งในนักวิจัยรุ่นใหม่ที่ได้รับการจับตามองอย่างยิ่งในวงการวิทยาการคอมพิวเตอร์ระดับสากล
-    </p>
+    <!-- Text container -->
+    <div style="flex: 1; min-width: 0;">
+      <!-- Thai Content -->
+      <div id="thaiContent" style="display: block;">
+        <h3 
+          style="
+            font-size: 1.6rem; 
+            font-weight: 800; 
+            margin-bottom: 0.7rem; 
+            color: #222;
+            cursor: pointer; 
+            text-decoration: none;
+          " 
+          onclick="window.location.href='teerapong-panboonyuen/'" 
+          onmouseover="this.style.textDecoration='underline'" 
+          onmouseout="this.style.textDecoration='none'">
+          ธีรพงศ์ ปานบุญยืน (ดร.เก้า)
+        </h3>
+        <p style="font-weight: 700; font-size: 1.1rem; margin: 0 0 0.7rem; color: #444;">Ph.D. in Computer Engineering, Chulalongkorn University</p>
+        <p style="font-size: 1rem; line-height: 1.65; color: #555; text-align: justify;">
+          ดร.เก้า ปัจจุบันดำรงตำแหน่งนักวิจัยปัญญาประดิษฐ์ที่ MARSAIL (Motor AI Recognition Solution Artificial Intelligence Laboratory) 
+          และได้รับทุนปริญญาหลังปริญญาเอกระดับศักยภาพสูง (Track A) จากโครงการ The Second Century Fund (C2F) ของจุฬาลงกรณ์มหาวิทยาลัย  
+          ผลงานวิจัยของ ดร.เก้า มุ่งเน้นไปที่การเรียนรู้เชิงแทนความหมาย (Representation Learning), ทฤษฎีการหาค่าที่เหมาะสมที่สุด (Optimization Theory) 
+          และการเรียนรู้แบบไร้ผู้สอน (Self-Supervised Learning) โดยมีความเชี่ยวชาญพิเศษในสาขา Computer Vision, Geospatial Intelligence 
+          และ Human-AI Interaction ซึ่งกำลังเปลี่ยนโฉมหน้าของเทคโนโลยีสมัยใหม่
+        </p>
+      </div>
 
-    <!-- ENGLISH TRANSLATION -->
-    <div class="bio-en">
-      <p style="text-align: justify;">
-        Dr. Teerapong Panboonyuen, also known as “Dr. Kao,” is a leading researcher in the field of Artificial Intelligence. He currently serves as the Principal Researcher at MARSAIL (Motor AI Recognition Solution Artificial Intelligence Laboratory), an advanced AI research lab integrating AI into the automotive industry and car insurance.<br /><br />
-        In terms of academic background, Dr. Kao completed his Ph.D. in Computer Engineering (Doctor of Engineering) at Chulalongkorn University in just two and a half years. His doctoral studies were supported by the 100th Anniversary Chulalongkorn University Doctoral Scholarship and the 90th Anniversary of Chulalongkorn University Scholarship. Prior to that, he earned his Master’s degree in the same field from Chulalongkorn University within one and a half years, under the Graduate Scholarship in Celebration of the 72nd Birthday Anniversary of His Majesty the King. Notably, Dr. Kao completed his doctoral degree at the age of 27, reflecting his outstanding academic capability and unwavering dedication.<br /><br />
-        He has been awarded the highest-level postdoctoral research fellowship under the Second Century Fund (C2F Track A) from Chulalongkorn University, supporting high-impact research in AI/ML with global significance. He is also among the few Thai researchers to receive the prestigious Global Young Scientists Summit (GYSS) 2025 scholarship, graciously bestowed by Her Royal Highness Princess Maha Chakri Sirindhorn.<br /><br />
-        Dr. Kao's expertise lies in Computer Vision—covering object recognition, scene understanding, and semantic perception—and in Geospatial Intelligence for analyzing satellite and aerial imagery to support spatial decision-making. He also focuses on Human-AI Interaction, a vital component for developing AI technologies that can effectively understand and communicate with humans. With his outstanding contributions and forward-looking vision, Dr. Kao is recognized as a rising figure in the international AI research community.
-      </p>
+      <!-- English Content -->
+      <div id="englishContent" style="display: none;">
+        <h3 
+          style="
+            font-size: 1.6rem; 
+            font-weight: 800; 
+            margin-bottom: 0.7rem; 
+            color: #222;
+            cursor: pointer; 
+            text-decoration: none;
+          " 
+          onclick="window.location.href='teerapong-panboonyuen/'" 
+          onmouseover="this.style.textDecoration='underline'" 
+          onmouseout="this.style.textDecoration='none'">
+          Teerapong Panboonyuen
+        </h3>
+        <p style="font-weight: 700; font-size: 1.1rem; margin: 0 0 0.7rem; color: #444;">Ph.D. in Computer Engineering, Chulalongkorn University</p>
+        <p style="font-size: 1rem; line-height: 1.65; color: #555; text-align: justify;">
+          Dr. Kao currently serves as an AI researcher at MARSAIL (Motor AI Recognition Solution Artificial Intelligence Laboratory).
+          He is a recipient of the prestigious Postdoctoral Fellowship (Track A) from the Second Century Fund (C2F) at Chulalongkorn University.
+          He is one of the select Thai researchers awarded the esteemed Global Young Scientists Summit (GYSS) 2025 scholarship, generously conferred by Her Royal Highness Princess Maha Chakri Sirindhorn.
+          His research focuses on representation learning, optimization theory, and self-supervised learning.
+        </p>
+      </div>
+
+      <!-- Personal website link -->
+      <div style="margin-top: 2rem;">
+        <a href="https://kaopanboonyuen.github.io/" target="_blank" 
+           style="
+             display: inline-flex; 
+             align-items: center; 
+             gap: 0.5rem; 
+             color: #2563eb; 
+             font-weight: 700; 
+             font-size: 1.05rem;
+             text-decoration: none;
+             transition: color 0.3s ease;
+           "
+           onmouseover="this.style.color='#1e40af'"
+           onmouseout="this.style.color='#2563eb'">
+          <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" fill="#2563eb">
+            <path d="M10.9 2.1c-.6 0-1.3.1-1.9.2-2.6.5-4.6 2.6-5.1 5.2-.3 1.6-.3 3.3-.3 4.8 0 3.2 2.5 5.7 5.7 5.7.8 0 1.6-.1 2.3-.4.4-.1.7.1.8.5.1.5.2 1 .2 1.4 0 .3-.2.5-.5.6-1.8.4-3.6.6-5.3.6-.3 0-.5.2-.5.5v.1c0 .2.2.5.5.5h.3c6.6-.1 11.9-5.5 11.9-12.2 0-3.2-1.3-6.2-3.5-8.4C16.2 2.4 13.6 2.1 10.9 2.1z"/>
+          </svg>
+          Visit Personal Website
+        </a>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- Personal Website Button -->
-    <div style="margin-top: 1rem;">
-      <a href="https://kaopanboonyuen.github.io/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #2563eb; font-weight: 600; text-decoration: none;">
-        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" fill="#2563eb"><path d="M10.9 2.1c-.6 0-1.3.1-1.9.2-2.6.5-4.6 2.6-5.1 5.2-.3 1.6-.3 3.3-.3 4.8 0 3.2 2.5 5.7 5.7 5.7.8 0 1.6-.1 2.3-.4.4-.1.7.1.8.5.1.5.2 1 .2 1.4 0 .3-.2.5-.5.6-1.8.4-3.6.6-5.3.6-.3 0-.5.2-.5.5v.1c0 .2.2.5.5.5h.3c6.6-.1 11.9-5.5 11.9-12.2 0-3.2-1.3-6.2-3.5-8.4C16.2 2.4 13.6 2.1 10.9 2.1z"/></svg>
-        Visit Personal Website
-      </a>
-    </div>
-  </section>
 
-  <!-- Hashtag Section -->
-<div style="margin-top: 2rem; padding: 1.5rem; background: #f0f4f8; border-left: 4px solid #2563eb; border-radius: 0.5rem;">
-  <p style="font-weight: 600; font-size: 1rem; color: #1e3a8a; margin-bottom: 0.5rem;">
-    🔖 Related Keywords:
-  </p>
-  <p style="color: #374151; line-height: 1.8; font-size: 0.95rem; transition: color 0.3s ease, background-color 0.3s ease;">
-    <span class="hashtag" style="transition: color 0.3s ease;">#TeerapongPanboonyuen</span>
-    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#DrKao</span>
-    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#ChulalongkornUniversity</span>
-    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#AIResearcher</span>
-    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#ComputerVision</span>  
-    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#RemoteSensing</span>
-    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#GeospatialIntelligence</span>
-    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#HumanAIInteraction</span>
-    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#MARSAIL</span>
-    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#C2FPostdoc</span>
-    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#GYSS2025</span>
-    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#PBYLab</span>
-    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#AIThailand</span>
-    <br />
-    <span class="hashtag" style="transition: color 0.3s ease;">#ธีรพงศ์-ปานบุญยืน</span>
-    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#ธีรพงศ์</span>
-    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#ปานบุญยืน</span>
-    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#ดร-เก้า</span>
-    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#ดร-ธีรพงศ์-ปานบุญยืน</span>
-  </p>
-</div>
 
-<!-- Add these styles to your CSS file or inline -->
+<script>
+  function switchLanguage() {
+    const thaiDiv = document.getElementById('thaiContent');
+    const engDiv = document.getElementById('englishContent');
+    const btn = document.getElementById('langToggleBtn');
+
+    if (thaiDiv.style.display === 'none') {
+      thaiDiv.style.display = 'block';
+      engDiv.style.display = 'none';
+      btn.textContent = 'Switch to English';
+    } else {
+      thaiDiv.style.display = 'none';
+      engDiv.style.display = 'block';
+      btn.textContent = 'Switch to Thai';
+    }
+  }
+</script>
+
 <style>
-  .hashtag:hover {
-    color: #2563eb; /* On hover, change to your blue color */
-    cursor: pointer;
-    text-decoration: underline; /* Adds a cool underline effect */
-    background-color: rgba(37, 99, 235, 0.1); /* Optional: soft background highlight */
+  /* Responsive styles for small screens */
+  @media screen and (max-width: 768px) {
+    .section {
+      padding: 1rem;
+    }
+
+    /* Stack image above text on mobile */
+    .section > div {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    /* Adjust image size and margins for mobile */
+    .section img {
+      width: 250px;
+      height: 250px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Adjust text container for mobile */
+    .section div {
+      padding: 0;
+    }
+
+    /* Reduce font sizes for mobile */
+    .section h2 {
+      font-size: 1.8rem;
+    }
+
+    .section h3 {
+      font-size: 1.4rem;
+    }
+
+    .section p {
+      font-size: 0.95rem;
+    }
+
+    .section a {
+      font-size: 1rem;
+    }
   }
 </style>
 
-  <section class="section publications">
+
+
+<div style="display: flex; justify-content: center; margin-top: 3rem; padding: 0 1rem;">
+ <img 
+  src="img/PBYLab_Logo.png" 
+  alt="PBY Lab Logo" 
+  style="
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    border-radius: 0; /* Square corners */
+    box-shadow: none; /* Remove shadow */
+    cursor: default; /* Prevent hover pointer */
+  "
+/>
+
+</div>
+
+
+
+<section class="section publications">
   <h2>📚 Selected Publications</h2>
 
   <div class="pub">
-  <h3>SLICK: Selective Localization and Instance Calibration</h3>
+  <h3>SLICK: Selective Localization and Instance Calibration in Automotive Insurance</h3>
   <p><strong>Teerapong Panboonyuen</strong>, et al. <em>arXiv 2025</em></p>
   <div class="buttons">
     <a href="https://arxiv.org/abs/2506.10528" target="_blank">PDF</a>
@@ -207,7 +377,7 @@
 </div>
 
 <div class="pub">
-  <h3>ALBERT: Advanced Localization and Bidirectional Encoder Representations</h3>
+  <h3>ALBERT: Advanced Localization and Bidirectional Encoder Representations from Transformers</h3>
   <p><strong>Teerapong Panboonyuen</strong>, et al. <em>arXiv 2025</em></p>
   <div class="buttons">
     <a href="https://arxiv.org/abs/2506.10524" target="_blank">PDF</a>
@@ -530,28 +700,67 @@
   }
 </style>
 
+<!-- Hashtag Section -->
+<div style="margin-top: 2rem; padding: 1.5rem; background: #f0f4f8; border-left: 4px solid #2563eb; border-radius: 0.5rem;">
+  <p style="font-weight: 600; font-size: 1rem; color: #1e3a8a; margin-bottom: 0.5rem;">
+    🔖 Related Keywords:
+  </p>
+  <p style="color: #374151; line-height: 1.8; font-size: 0.95rem; transition: color 0.3s ease, background-color 0.3s ease;">
+    <span class="hashtag" style="transition: color 0.3s ease;">#TeerapongPanboonyuen</span>
+    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#DrKao</span>
+    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#ChulalongkornUniversity</span>
+    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#AIResearcher</span>
+    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#ComputerVision</span>  
+    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#RemoteSensing</span>
+    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#GeospatialIntelligence</span>
+    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#HumanAIInteraction</span>
+    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#MARSAIL</span>
+    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#C2FPostdoc</span>
+    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#GYSS2025</span>
+    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#PBYLab</span>
+    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#AIThailand</span>
+    <br />
+    <span class="hashtag" style="transition: color 0.3s ease;">#ธีรพงศ์-ปานบุญยืน</span>
+    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#ธีรพงศ์</span>
+    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#ปานบุญยืน</span>
+    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#ดร-เก้า</span>
+    &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#ดร-ธีรพงศ์-ปานบุญยืน</span>
+  </p>
+</div>
+
+<!-- Add these styles to your CSS file or inline -->
+<style>
+  .hashtag:hover {
+    color: #2563eb; /* On hover, change to your blue color */
+    cursor: pointer;
+    text-decoration: underline; /* Adds a cool underline effect */
+    background-color: rgba(37, 99, 235, 0.1); /* Optional: soft background highlight */
+  }
+</style>
+
+  
+
 <div style="display: flex; justify-content: center; margin-top: 3rem; padding: 0 1rem;">
   <img 
-    src="../img/PBYLab_Logo.png" 
-    alt="PBY Lab Logo" 
-    style="
-      width: 100%;
-      max-width: 480px;
-      height: auto;
-      border-radius: 30px;
-      box-shadow: default;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    "
-    onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 12px 36px rgba(0,0,0,0.25)';"
-    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)';"
-    onclick="startGame()"
-  />
+  src="img/PBYLab_Logo.png" 
+  alt="PBY Lab Logo" 
+  style="
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    border-radius: 0; /* Square corners */
+    box-shadow: none; /* Remove shadow */
+    cursor: default; /* Prevent hover pointer */
+  "
+/>
+
 </div>
 
 
-  <div class="back-link">
-  <a href="/">← Back to Home</a>
-</div>
 
+
+  <footer class="section" style="text-align: center; font-size: 0.9rem; color: #6b7280">
+    &copy; 2025 PBY Lab — Perception-Based Yonder. All rights reserved.
+  </footer>
 </body>
 </html>
