@@ -151,11 +151,24 @@ function askQuestion(difficulty) {
   modal.style.lineHeight = "1.5";
   modal.style.position = "relative";
 
-  // Question text
-  const questionEl = document.createElement("div");
-  questionEl.textContent = `🧠 Ready? Solve:\n${question}`;
-  questionEl.style.marginBottom = "20px";
-  modal.appendChild(questionEl);
+// Question text with typing effect
+const questionEl = document.createElement("div");
+questionEl.style.marginBottom = "20px";
+modal.appendChild(questionEl);
+
+const questionText = `🧠 Ready? Solve:\n${question}`;
+let i = 0;
+
+function typeQuestion() {
+  if (i < questionText.length) {
+    questionEl.textContent += questionText.charAt(i);
+    i++;
+    setTimeout(typeQuestion, 25); // adjust typing speed here (ms per char)
+  }
+}
+
+typeQuestion();
+
 
   // Input section
   const input = document.createElement("input");
@@ -185,13 +198,31 @@ function askQuestion(difficulty) {
     const endTime = Date.now();
     const timeUsed = ((endTime - startTime) / 1000).toFixed(2);
 
-    if (parseInt(userAnswer) === answer) {
-      feedback.textContent = `🎉 Correct!\n⏱️ Time: ${timeUsed}s\nYou're amazing! – Kao`;
-      feedback.style.color = "green";
-    } else {
-      feedback.textContent = `❌ Nope!\nAnswer was: ${answer}\n⏱️ Time: ${timeUsed}s\nKeep it up! – Kao`;
-      feedback.style.color = "red";
+    function typeFeedback(feedbackText, color) {
+  let i = 0;
+  feedback.textContent = ''; // Clear existing text
+  feedback.style.color = color;
+
+  function type() {
+    if (i < feedbackText.length) {
+      feedback.textContent += feedbackText.charAt(i);
+      i++;
+      setTimeout(type, 50); // Adjust typing speed (lower = faster)
     }
+  }
+
+  type(); // Start typing the feedback
+}
+
+// Example usage:
+if (parseInt(userAnswer) === answer) {
+  const correctMessage = `🎉 Woohoo! You nailed it! 🚀\n⏱️ Time: ${timeUsed}s\nYou're on fire 🔥 Keep shining!\n\nWith love, \nKao Panboonyuen 💚`;
+  typeFeedback(correctMessage, "green");
+} else {
+  const incorrectMessage = `❌ Oops! Not quite, but you’re so close! 💪\nAnswer was: ${answer}\n⏱️ Time: ${timeUsed}s\nDon't stop—keep hustling! 💥\n\nWith love, \nKao Panboonyuen 💚`;
+  typeFeedback(incorrectMessage, "red");
+}
+
     input.disabled = true;
     button.disabled = true;
 
