@@ -195,15 +195,20 @@
 </div>
 
 <script>
-  // Dynamically get the current domain and construct the URL
-  const domain = window.location.origin;  // This will get the full domain (e.g., https://kaopanboonyuen.github.io)
+  // Dynamically get the current domain and the base path
+  const domain = window.location.origin; // Get the full domain (e.g., https://kaopanboonyuen.github.io)
+  const basePath = window.location.pathname.split('/')[1]; // Get the first part of the path after the domain (subdirectory name)
+
+  // Construct the URL with the dynamically obtained base path
   const path = "/teerapong-panboonyuen/";  // The relative path you want to navigate to
 
   // Set the href of the anchor tag dynamically
   const imageLink = document.getElementById('image-link');
   
-  // Only append the relative path
-  imageLink.href = domain + path;  // Correct URL structure
+  // If there's a base path (subdirectory), use it, otherwise use just the domain
+  imageLink.href = basePath ? domain + '/' + basePath + path : domain + path; 
+</script>
+
 
 </script>
 
