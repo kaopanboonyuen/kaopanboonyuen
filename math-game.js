@@ -219,7 +219,7 @@ if (parseInt(userAnswer) === answer) {
   const correctMessage = `🎉 Woohoo! You nailed it! 🚀\n⏱️ Time: ${timeUsed}s\nYou're on fire 🔥 Keep shining!\n\nWith love, \nKao Panboonyuen 💚`;
   typeFeedback(correctMessage, "green");
 } else {
-  const incorrectMessage = `❌ Oops! Not quite, but you’re so close! 💪\nAnswer was: ${answer}\n⏱️ Time: ${timeUsed}s\nDon't stop—keep hustling! 💥\n\nWith love, \nKao Panboonyuen 💚`;
+  const incorrectMessage = `❌ Oops! Not quite — give it another try! 💪\nAnswer was: ${answer}\n⏱️ Time: ${timeUsed}s\nDon't stop—keep hustling! 💥\n\nWith love, \nKao Panboonyuen 💚`;
   typeFeedback(incorrectMessage, "red");
 }
 
@@ -417,7 +417,7 @@ function startGame() {
   });
 
   const greetingMessage = greetings[Math.floor(Math.random() * greetings.length)](today);
-  const fullMessage = `Hey! It's Kao 😄\n\n${greetingMessage}\n\nReady for a brain workout? 💡\nChoose difficulty: easy, medium, or hard`;
+  const fullMessage = `Hi! Kao here 😄 Glad to see you!\n\n${greetingMessage}\n\nReady for a brain workout? 💡\nChoose difficulty: easy, medium, or hard`;
 
   showTypingPopup(fullMessage);
 }
@@ -453,54 +453,87 @@ function showTypingPopup(message) {
   const inputSection = document.createElement("div");
   inputSection.style.marginTop = "20px";
   inputSection.style.display = "none";
+  inputSection.style.textAlign = "center";
 
-  const input = document.createElement("input");
-  input.type = "text";
-  input.placeholder = "Type: easy, medium, or hard";
-  input.style.padding = "8px";
-  input.style.width = "70%";
-  input.style.marginRight = "10px";
-  input.style.border = "1px solid #ccc";
-  input.style.borderRadius = "4px";
+  // Difficulty buttons
+  const difficulties = ["easy", "medium", "hard"];
+  let selectedDifficulty = null;
 
-  const button = document.createElement("button");
-  button.textContent = "Start";
-  button.style.padding = "8px 12px";
-  button.style.border = "none";
-  button.style.borderRadius = "4px";
-  button.style.backgroundColor = "#4CAF50";
-  button.style.color = "#fff";
-  button.style.cursor = "pointer";
+  const buttonsWrapper = document.createElement("div");
+  buttonsWrapper.style.marginBottom = "15px";
 
-  // Error message div — initially empty and hidden
+  difficulties.forEach(level => {
+    const btn = document.createElement("button");
+    btn.textContent = level.charAt(0).toUpperCase() + level.slice(1);
+    btn.dataset.difficulty = level;
+
+    btn.style.margin = "0 10px";
+    btn.style.padding = "10px 20px";
+    btn.style.border = "none";
+    btn.style.borderRadius = "5px";
+    btn.style.backgroundColor = "#eee";
+    btn.style.cursor = "pointer";
+    btn.style.transition = "all 0.3s";
+    btn.style.fontWeight = "bold";
+    btn.style.textTransform = "capitalize";
+
+    btn.onclick = () => {
+      // Reset all buttons
+      Array.from(buttonsWrapper.children).forEach(b => {
+        b.style.backgroundColor = "#eee";
+        b.style.color = "#000";
+        b.style.boxShadow = "none";
+      });
+
+      // Highlight selected button
+      btn.style.backgroundColor = "#4CAF50";
+      btn.style.color = "#fff";
+      btn.style.boxShadow = "0 0 8px rgba(0, 0, 0, 0.2)";
+
+      selectedDifficulty = level;
+      errorMessage.style.display = "none"; // hide error if previously shown
+    };
+
+    buttonsWrapper.appendChild(btn);
+  });
+
+  // Start button
+  const startButton = document.createElement("button");
+  startButton.textContent = "Start Game";
+  startButton.style.padding = "10px 25px";
+  startButton.style.border = "none";
+  startButton.style.borderRadius = "5px";
+  startButton.style.backgroundColor = "#2196F3";
+  startButton.style.color = "#fff";
+  startButton.style.cursor = "pointer";
+  startButton.style.fontSize = "16px";
+  startButton.style.fontWeight = "bold";
+
+  // Error message
   const errorMessage = document.createElement("div");
   errorMessage.style.color = "red";
   errorMessage.style.marginTop = "10px";
   errorMessage.style.fontWeight = "bold";
   errorMessage.style.display = "none";
-  modal.appendChild(errorMessage);
 
-  button.onclick = () => {
-    const difficulty = input.value.trim().toLowerCase();
-
-    if (['easy', 'medium', 'hard'].includes(difficulty)) {
+  startButton.onclick = () => {
+    if (selectedDifficulty) {
       document.body.removeChild(overlay);
-      askQuestion(difficulty);
+      askQuestion(selectedDifficulty);
     } else {
-      // Show inline error message
-      errorMessage.textContent = "⚠️ Please type easy, medium, or hard.";
+      errorMessage.textContent = "⚠️ Please select a difficulty.";
       errorMessage.style.display = "block";
-      input.focus();
     }
   };
 
-  inputSection.appendChild(input);
-  inputSection.appendChild(button);
+  inputSection.appendChild(buttonsWrapper);
+  inputSection.appendChild(startButton);
+  inputSection.appendChild(errorMessage);
   modal.appendChild(inputSection);
   overlay.appendChild(modal);
   document.body.appendChild(overlay);
 
-  // Typing effect for the greeting message
+  // Typing animation
   let i = 0;
   function type() {
     if (i < message.length) {
@@ -509,7 +542,6 @@ function showTypingPopup(message) {
       setTimeout(type, 25);
     } else {
       inputSection.style.display = "block";
-      input.focus();
     }
   }
 
