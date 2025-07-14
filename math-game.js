@@ -16,11 +16,11 @@ function getRandomInt(min, max) {
 // Generate a group of terms with same operator (e.g., + + +)
 function generateGroup(difficulty) {
   let range, minTerms, maxTerms;
-  if (difficulty === 'easy') {
+  if (difficulty === "easy") {
     range = [1, 10];
     minTerms = 2;
     maxTerms = 3;
-  } else if (difficulty === 'medium') {
+  } else if (difficulty === "medium") {
     range = [5, 50];
     minTerms = 3;
     maxTerms = 4;
@@ -30,12 +30,12 @@ function generateGroup(difficulty) {
     maxTerms = 4;
   }
 
-  const operators = ['+', '-', '*', '/'];
+  const operators = ["+", "-", "*", "/"];
   let op = operators[Math.floor(Math.random() * operators.length)];
   let termCount = getRandomInt(minTerms, maxTerms);
   let nums = [];
 
-  if (op === '/') {
+  if (op === "/") {
     // To keep integer positive result for division:
     // generate the last term first, then multiply by random divisors
     let lastTerm = getRandomInt(range[0], range[1]);
@@ -45,7 +45,7 @@ function generateGroup(difficulty) {
       nums[0] *= divisor;
       nums.push(divisor);
     }
-  } else if (op === '-') {
+  } else if (op === "-") {
     // For subtraction, generate terms in descending order to keep result positive
     for (let i = 0; i < termCount; i++) {
       nums.push(getRandomInt(range[0], range[1]));
@@ -73,7 +73,7 @@ function generateGroup(difficulty) {
 
 function generateQuestion(difficulty) {
   while (true) {
-    let groupCount = difficulty === 'hard' ? 3 : 2;
+    let groupCount = difficulty === "hard" ? 3 : 2;
     let groups = [];
 
     for (let i = 0; i < groupCount; i++) {
@@ -82,23 +82,24 @@ function generateQuestion(difficulty) {
       while (!group) {
         group = generateGroup(difficulty);
         attempts++;
-        if (attempts > 100) break;  // avoid infinite loop
+        if (attempts > 100) break; // avoid infinite loop
       }
-      if (!group) break;  // fail safe
+      if (!group) break; // fail safe
       groups.push(group);
     }
     if (groups.length !== groupCount) continue;
 
-    const possibleOps = ['+', '-', '*'];
+    const possibleOps = ["+", "-", "*"];
     let betweenOps = [];
     for (let i = 0; i < groupCount - 1; i++) {
       // Avoid same operator as group to mix it up
-      let ops = possibleOps.filter(o => o !== groups[i].op);
+      let ops = possibleOps.filter((o) => o !== groups[i].op);
       let op = ops[Math.floor(Math.random() * ops.length)];
       betweenOps.push(op);
     }
 
-    let question = groups[0].expr.length > 1 ? `(${groups[0].expr})` : groups[0].expr;
+    let question =
+      groups[0].expr.length > 1 ? `(${groups[0].expr})` : groups[0].expr;
     let currentValue = groups[0].answer;
 
     for (let i = 1; i < groupCount; i++) {
@@ -107,15 +108,19 @@ function generateQuestion(difficulty) {
       let exprPart = g.expr.length > 1 ? `(${g.expr})` : g.expr;
       let val = g.answer;
 
-      if (op === '+') currentValue += val;
-      else if (op === '-') currentValue -= val;
-      else if (op === '*') currentValue *= val;
+      if (op === "+") currentValue += val;
+      else if (op === "-") currentValue -= val;
+      else if (op === "*") currentValue *= val;
 
       question += ` ${op} ${exprPart}`;
     }
 
     // Ensure final answer integer and between 1 and 10,000
-    if (Number.isInteger(currentValue) && currentValue >= 1 && currentValue <= 10000) {
+    if (
+      Number.isInteger(currentValue) &&
+      currentValue >= 1 &&
+      currentValue <= 10000
+    ) {
       return { question, answer: currentValue };
     }
   }
@@ -125,7 +130,7 @@ function askQuestion(difficulty) {
   const { question, answer } = generateQuestion(difficulty);
   const startTime = Date.now();
 
-  // Create overlay and modal just like showTypingPopup
+  // Create overlay
   const overlay = document.createElement("div");
   overlay.style.position = "fixed";
   overlay.style.top = "0";
@@ -138,6 +143,7 @@ function askQuestion(difficulty) {
   overlay.style.alignItems = "center";
   overlay.style.zIndex = "9999";
 
+  // Create modal
   const modal = document.createElement("div");
   modal.style.backgroundColor = "#fff";
   modal.style.padding = "20px";
@@ -151,272 +157,214 @@ function askQuestion(difficulty) {
   modal.style.lineHeight = "1.5";
   modal.style.position = "relative";
 
-// Question text with typing effect
-const questionEl = document.createElement("div");
-questionEl.style.marginBottom = "20px";
-modal.appendChild(questionEl);
+  // Question text with typing effect
+  const questionEl = document.createElement("div");
+  questionEl.style.marginBottom = "20px";
+  modal.appendChild(questionEl);
 
-const questionText = `🧠 Ready? Solve:\n${question}`;
-let i = 0;
-
-function typeQuestion() {
-  if (i < questionText.length) {
-    questionEl.textContent += questionText.charAt(i);
-    i++;
-    setTimeout(typeQuestion, 25); // adjust typing speed here (ms per char)
-  }
-}
-
-typeQuestion();
-
-
-  // Input section
-  const input = document.createElement("input");
-  input.type = "number";
-  input.placeholder = "Your answer";
-  input.style.padding = "8px";
-  input.style.width = "70%";
-  input.style.marginRight = "10px";
-  input.style.border = "1px solid #ccc";
-  input.style.borderRadius = "4px";
-
-  const button = document.createElement("button");
-  button.textContent = "Submit";
-  button.style.padding = "8px 12px";
-  button.style.border = "none";
-  button.style.borderRadius = "4px";
-  button.style.backgroundColor = "#4CAF50";
-  button.style.color = "#fff";
-  button.style.cursor = "pointer";
-
-  const feedback = document.createElement("div");
-  feedback.style.marginTop = "20px";
-  feedback.style.fontWeight = "bold";
-
-  button.onclick = () => {
-    const userAnswer = input.value.trim();
-    const endTime = Date.now();
-    const timeUsed = ((endTime - startTime) / 1000).toFixed(2);
-
-    function typeFeedback(feedbackText, color) {
+  const questionText = `🧠 Ready? Solve:\n${question}`;
   let i = 0;
-  feedback.textContent = ''; // Clear existing text
-  feedback.style.color = color;
 
-  function type() {
-    if (i < feedbackText.length) {
-      feedback.textContent += feedbackText.charAt(i);
+  function typeQuestion(callback) {
+    if (i < questionText.length) {
+      questionEl.textContent += questionText.charAt(i);
       i++;
-      setTimeout(type, 50); // Adjust typing speed (lower = faster)
+      setTimeout(() => typeQuestion(callback), 25); // adjust typing speed here
+    } else {
+      callback();
     }
   }
 
-  type(); // Start typing the feedback
-}
+  // Multiple choice container (hidden until typing is done)
+  const choicesContainer = document.createElement("div");
+  choicesContainer.style.display = "grid";
+  choicesContainer.style.gridTemplateColumns = "1fr 1fr";
+  choicesContainer.style.gap = "10px";
+  choicesContainer.style.marginTop = "20px";
+  modal.appendChild(choicesContainer);
 
-// Example usage:
-if (parseInt(userAnswer) === answer) {
-  const correctMessage = `🎉 Woohoo! You nailed it! 🚀\n⏱️ Time: ${timeUsed}s\nYou're on fire 🔥 Keep shining!\n\nWith love, \nKao Panboonyuen 💚`;
-  typeFeedback(correctMessage, "green");
-} else {
-  const incorrectMessage = `❌ Oops! Not quite — give it another try! 💪\nAnswer was: ${answer}\n⏱️ Time: ${timeUsed}s\nDon't stop—keep hustling! 💥\n\nWith love, \nKao Panboonyuen 💚`;
-  typeFeedback(incorrectMessage, "red");
-}
-
-    input.disabled = true;
-    button.disabled = true;
-
-    // Add a 'Close' button after showing feedback
-    const closeBtn = document.createElement("button");
-    closeBtn.textContent = "Close";
-    closeBtn.style.marginTop = "15px";
-    closeBtn.style.padding = "8px 12px";
-    closeBtn.style.border = "none";
-    closeBtn.style.borderRadius = "4px";
-    closeBtn.style.backgroundColor = "#2196F3";
-    closeBtn.style.color = "#fff";
-    closeBtn.style.cursor = "pointer";
-
-    closeBtn.onclick = () => {
-      document.body.removeChild(overlay);
-    };
-
-    modal.appendChild(closeBtn);
-  };
-
-  // Layout input and submit button horizontally
-  const inputSection = document.createElement("div");
-  inputSection.style.display = "flex";
-  inputSection.style.alignItems = "center";
-  inputSection.appendChild(input);
-  inputSection.appendChild(button);
-
-  modal.appendChild(inputSection);
+  // Feedback display
+  const feedback = document.createElement("div");
+  feedback.style.marginTop = "20px";
+  feedback.style.fontWeight = "bold";
   modal.appendChild(feedback);
+
+  // Generate 3 fake answers close to the real one
+  let choices = new Set();
+  choices.add(answer);
+
+  while (choices.size < 4) {
+    let offset = getRandomInt(-10, 10);
+    let fake = answer + offset;
+    if (fake !== answer && fake > 0 && fake <= 10000) {
+      choices.add(fake);
+    }
+  }
+
+  const shuffled = Array.from(choices).sort(() => Math.random() - 0.5);
+
+  function showChoices() {
+    shuffled.forEach((choiceVal, index) => {
+      const btn = document.createElement("button");
+      btn.textContent = choiceVal;
+      btn.style.padding = "10px";
+      btn.style.fontSize = "16px";
+      btn.style.border = "2px solid #ccc";
+      btn.style.borderRadius = "6px";
+      btn.style.cursor = "pointer";
+      btn.style.opacity = "0";
+      btn.style.transform = "translateY(10px)";
+      btn.style.transition = "all 0.4s ease";
+
+      btn.onclick = () => {
+        const endTime = Date.now();
+        const timeUsed = ((endTime - startTime) / 1000).toFixed(2);
+
+        function typeFeedback(feedbackText, color) {
+          let i = 0;
+          feedback.textContent = "";
+          feedback.style.color = color;
+
+          function type() {
+            if (i < feedbackText.length) {
+              feedback.textContent += feedbackText.charAt(i);
+              i++;
+              setTimeout(type, 40);
+            }
+          }
+
+          type();
+        }
+
+        if (parseInt(choiceVal) === answer) {
+          typeFeedback(
+            `✅ Fantastic! You got it right! 🎉\n⏱️ Time taken: ${timeUsed}s\nKeep up the great work — you’re doing amazing! 💪\n\nWith encouragement,\nKao Panboonyuen 💚`,
+            "green"
+          );
+        } else {
+          typeFeedback(
+            `❌ Almost there! Don’t worry, mistakes help us learn. 🌟\nThe correct answer was: ${answer}\n⏱️ Time taken: ${timeUsed}s\nGive it another try — you’ve got this! 🚀\n\nCheering you on,\nKao Panboonyuen 💚`,
+            "red"
+          );
+        }
+
+        // Disable all buttons after answer
+        Array.from(choicesContainer.children).forEach(
+          (b) => (b.disabled = true)
+        );
+
+        // Add close button
+        const closeBtn = document.createElement("button");
+        closeBtn.textContent = "Close";
+        closeBtn.style.marginTop = "15px";
+        closeBtn.style.padding = "8px 12px";
+        closeBtn.style.border = "none";
+        closeBtn.style.borderRadius = "4px";
+        closeBtn.style.backgroundColor = "#2196F3";
+        closeBtn.style.color = "#fff";
+        closeBtn.style.cursor = "pointer";
+        closeBtn.onclick = () => document.body.removeChild(overlay);
+        modal.appendChild(closeBtn);
+      };
+
+      choicesContainer.appendChild(btn);
+
+      // Animate after appending (staggered delay)
+      setTimeout(() => {
+        btn.style.opacity = "1";
+        btn.style.transform = "translateY(0)";
+      }, 150 * index);
+    });
+  }
+
   overlay.appendChild(modal);
   document.body.appendChild(overlay);
 
-  input.focus();
+  // Start typing and reveal choices after
+  typeQuestion(showChoices);
 }
 
-
 function startGame() {
-//   const greetings = [
-//     date => `Today is ${date}. I hope you're feeling inspired and ready to shine.`,
-//     date => `${date} — a fresh new day to do your best and feel proud.`,
-//     date => `It’s ${date}. Remember, every step forward counts.`,
-//     date => `Happy ${date}! You've got what it takes to succeed.`,
-//     date => `On this beautiful ${date}, take a breath and believe in yourself.`,
-//     date => `${date} brings new energy. Keep pushing and keep smiling.`,
-//     date => `Hey there! ${date} is full of opportunities and good vibes.`,
-//     date => `Wishing you strength and clarity this ${date}. You've got this.`,
-//     date => `Take on ${date} with courage and joy. You're doing amazing.`,
-//     date => `Step into ${date} with confidence. Great things are ahead.`,
-//     date => `${date} is a perfect day to grow stronger and brighter.`,
-//     date => `Hope you're feeling grounded and focused this ${date}. Keep going.`,
-//     date => `Breathe in calm and confidence this ${date}. You're doing great.`,
-//     date => `Let the energy of ${date} lift you up. You've got this.`,
-//     date => `This ${date}, remember how far you’ve come. Keep rising.`,
-//     date => `May ${date} bring peace to your heart and clarity to your mind.`,
-//     date => `${date} is yours to shape. Stay strong and stay kind.`,
-//     date => `Embrace the pace of progress this ${date}. One step at a time.`,
-//     date => `Sending you good vibes and steady focus this ${date}.`,
-//     date => `Let ${date} be a gentle reminder that you're capable of amazing things.`
-//   ];
-
   const greetings = [
-  date => `🌞 Today is ${date}. I hope you're feeling inspired and ready to shine ✨.`,
-  date => `${date} — a fresh new day to do your best and feel proud 💪😊.`,
-  date => `It’s ${date}. Remember, every step forward counts 👣🔥.`,
-  date => `🎉 Happy ${date}! You've got what it takes to succeed 🚀💯.`,
-  date => `On this beautiful ${date}, take a breath and believe in yourself 🌸💖.`,
-  date => `${date} brings new energy ⚡. Keep pushing and keep smiling 😄👍.`,
-  date => `Hey there! ${date} is full of opportunities and good vibes 🌈✨.`,
-  date => `Wishing you strength and clarity this ${date} 💡💪. You've got this!`,
-  date => `Take on ${date} with courage and joy 🦸‍♂️😄. You're doing amazing!`,
-  date => `Step into ${date} with confidence 🚶‍♀️🌟. Great things are ahead!`,
-  date => `${date} is a perfect day to grow stronger and brighter 🌱🌞.`,
-  date => `Hope you're feeling grounded and focused this ${date} 🧘‍♀️🎯. Keep going!`,
-  date => `Breathe in calm and confidence this ${date} 🌬️😌. You're doing great!`,
-  date => `Let the energy of ${date} lift you up 🚀💫. You've got this!`,
-  date => `This ${date}, remember how far you’ve come 🏆🙌. Keep rising!`,
-  // date => `May ${date} bring peace to your heart and clarity to your mind 🕊️💭.`,
-  date => `${date} is yours to shape 🛠️✨. Stay strong and stay kind ❤️🤝.`,
-  date => `Embrace the pace of progress this ${date} 🐢➡️🐇. One step at a time!`,
-  date => `Sending you good vibes and steady focus this ${date} ✨🎯.`,
-  date => `Let ${date} be a gentle reminder that you're capable of amazing things 🌟💖.`,
-  date => `🌟 Rise and shine! ${date} is here to bring you endless possibilities and joyful moments 🌈✨.`,
-  date => `Good vibes only this ${date}! Let your passion light up the day like fireworks 🎆🔥.`,
-  date => `Cheers to ${date}! Hope your energy is as unstoppable as a comet streaking across the sky ☄️🚀.`,
-  date => `Hello ${date}! Step boldly into today with a heart full of courage and a smile that lights up the room 😄💫.`,
-  date => `🌺 On this lovely ${date}, nurture your dreams and watch them bloom into reality 🌸🌻.`,
-  date => `Keep your head high and spirits higher this ${date} — you’re making magic happen ✨🪄.`,
-  date => `It’s ${date}, the perfect day to sparkle and show the world your unique brilliance ✨🌟.`,
-  date => `Sending you a sunshine-filled ${date} ☀️ and a breeze of calm to carry you through with ease 🍃💨.`,
-  date => `Every moment of ${date} is a gift wrapped in hope, courage, and smiles 🎁😊. Unwrap it fully!`,
-  date => `💪 Power through this ${date} with unstoppable confidence and a heart full of gratitude 🙌❤️.`,
-  date => `Today’s ${date} mission: embrace challenges like a hero and celebrate every victory 🦸‍♀️🏅.`,
-  date => `🌈 Let the colors of ${date} brighten your soul and inspire your every step 🎨👣.`,
-  date => `Wishing you a sparkling ${date} filled with laughter, learning, and limitless potential 😄📚🚀.`,
-  date => `Open your arms wide for ${date} — a day ready to fill you with joy, growth, and endless possibility 🤗🌱.`,
-  date => `Smile big this ${date}! Your enthusiasm is contagious and your energy unstoppable 😁⚡.`,
-  date => `🌟 Shine bright like a diamond today, ${date}. Your unique light makes the world better 💎✨.`,
-  // date => `May ${date} be sprinkled with kindness, courage, and countless moments that make your heart sing 🎶💖.`,
-  date => `💫 Today’s ${date} vibes: dream big, work hard, and enjoy every step of your incredible journey 🚀🌍.`,
-  date => `Feel the power of possibility on this ${date}. You have everything it takes to turn dreams into reality 🌟🛤️.`,
-  date => `Happy ${date}! Keep your spirit fierce, your smile wide, and your heart open to wonder 🦋😊✨.`
-];
+    (date) =>
+      `🌞 Today is ${date}. I hope you're feeling inspired and ready to shine ✨.`,
+    (date) => `${date} — a fresh new day to do your best and feel proud 💪😊.`,
+    (date) => `It’s ${date}. Remember, every step forward counts 👣🔥.`,
+    (date) => `🎉 Happy ${date}! You've got what it takes to succeed 🚀💯.`,
+    (date) =>
+      `On this beautiful ${date}, take a breath and believe in yourself 🌸💖.`,
+    (date) =>
+      `${date} brings new energy ⚡. Keep pushing and keep smiling 😄👍.`,
+    (date) =>
+      `Hey there! ${date} is full of opportunities and good vibes 🌈✨.`,
+    (date) =>
+      `Wishing you strength and clarity this ${date} 💡💪. You've got this!`,
+    (date) =>
+      `Take on ${date} with courage and joy 🦸‍♂️😄. You're doing amazing!`,
+    (date) => `Step into ${date} with confidence 🚶‍♀️🌟. Great things are ahead!`,
+    (date) => `${date} is a perfect day to grow stronger and brighter 🌱🌞.`,
+    (date) =>
+      `Hope you're feeling grounded and focused this ${date} 🧘‍♀️🎯. Keep going!`,
+    (date) =>
+      `Breathe in calm and confidence this ${date} 🌬️😌. You're doing great!`,
+    (date) => `Let the energy of ${date} lift you up 🚀💫. You've got this!`,
+    (date) => `This ${date}, remember how far you’ve come 🏆🙌. Keep rising!`,
+    // date => `May ${date} bring peace to your heart and clarity to your mind 🕊️💭.`,
+    (date) => `${date} is yours to shape 🛠️✨. Stay strong and stay kind ❤️🤝.`,
+    (date) =>
+      `Embrace the pace of progress this ${date} 🐢➡️🐇. One step at a time!`,
+    (date) => `Sending you good vibes and steady focus this ${date} ✨🎯.`,
+    (date) =>
+      `Let ${date} be a gentle reminder that you're capable of amazing things 🌟💖.`,
+    (date) =>
+      `🌟 Rise and shine! ${date} is here to bring you endless possibilities and joyful moments 🌈✨.`,
+    (date) =>
+      `Good vibes only this ${date}! Let your passion light up the day like fireworks 🎆🔥.`,
+    (date) =>
+      `Cheers to ${date}! Hope your energy is as unstoppable as a comet streaking across the sky ☄️🚀.`,
+    (date) =>
+      `Hello ${date}! Step boldly into today with a heart full of courage and a smile that lights up the room 😄💫.`,
+    (date) =>
+      `🌺 On this lovely ${date}, nurture your dreams and watch them bloom into reality 🌸🌻.`,
+    (date) =>
+      `Keep your head high and spirits higher this ${date} — you’re making magic happen ✨🪄.`,
+    (date) =>
+      `It’s ${date}, the perfect day to sparkle and show the world your unique brilliance ✨🌟.`,
+    (date) =>
+      `Sending you a sunshine-filled ${date} ☀️ and a breeze of calm to carry you through with ease 🍃💨.`,
+    (date) =>
+      `Every moment of ${date} is a gift wrapped in hope, courage, and smiles 🎁😊. Unwrap it fully!`,
+    (date) =>
+      `💪 Power through this ${date} with unstoppable confidence and a heart full of gratitude 🙌❤️.`,
+    (date) =>
+      `Today’s ${date} mission: embrace challenges like a hero and celebrate every victory 🦸‍♀️🏅.`,
+    (date) =>
+      `🌈 Let the colors of ${date} brighten your soul and inspire your every step 🎨👣.`,
+    (date) =>
+      `Wishing you a sparkling ${date} filled with laughter, learning, and limitless potential 😄📚🚀.`,
+    (date) =>
+      `Open your arms wide for ${date} — a day ready to fill you with joy, growth, and endless possibility 🤗🌱.`,
+    (date) =>
+      `Smile big this ${date}! Your enthusiasm is contagious and your energy unstoppable 😁⚡.`,
+    (date) =>
+      `🌟 Shine bright like a diamond today, ${date}. Your unique light makes the world better 💎✨.`,
+    // date => `May ${date} be sprinkled with kindness, courage, and countless moments that make your heart sing 🎶💖.`,
+    (date) =>
+      `💫 Today’s ${date} vibes: dream big, work hard, and enjoy every step of your incredible journey 🚀🌍.`,
+    (date) =>
+      `Feel the power of possibility on this ${date}. You have everything it takes to turn dreams into reality 🌟🛤️.`,
+    (date) =>
+      `Happy ${date}! Keep your spirit fierce, your smile wide, and your heart open to wonder 🦋😊✨.`,
+  ];
 
-
-
-//   const greetings = [
-//     date => `Today is ${date}, a brand new chapter filled with endless possibilities and opportunities waiting just for you. I hope you’re feeling inspired, energized, and ready to shine brighter than ever before, knowing that every moment you put in today brings you one step closer to your dreams.`,
-
-//     date => `${date} — a fresh canvas for you to paint with your talents, passion, and courage. Take a deep breath, stand tall, and do your absolute best today, because every effort, no matter how small, is something to be proud of and will build the foundation of your success.`,
-
-//     date => `It’s ${date}, a beautiful reminder that progress is made one step at a time. Celebrate every forward move, no matter how tiny, because each step shapes your journey, strengthens your resolve, and brings you closer to becoming the best version of yourself.`,
-
-//     date => `Happy ${date}! Today, remember that you possess an incredible inner strength and the unique ability to overcome any obstacle. Believe in yourself fiercely, embrace challenges as opportunities, and know that success is not only possible, it’s inevitable with your determination.`,
-
-//     date => `On this beautiful ${date}, pause for a moment to breathe deeply and appreciate how far you’ve come. Let self-belief fill your heart, and face the day with confidence and kindness to yourself — you are worthy of all the good things life has to offer.`,
-
-//     date => `${date} brings with it fresh energy, renewed hope, and a chance to rewrite your story. Keep pushing forward with a smile on your face, because your resilience and positive attitude light the way not just for you, but for those around you as well.`,
-
-//     date => `Hey there! ${date} is bursting with opportunity and good vibes just waiting for you to seize. Embrace the challenges and joys of today with an open heart and an unstoppable spirit, knowing that your potential is limitless and your efforts truly matter.`,
-
-//     date => `Wishing you strength, clarity, and unwavering focus this ${date}. You have all the tools inside you to navigate through any uncertainty, and your perseverance will lead you to triumph. Keep going—you’re doing amazing and the best is yet to come.`,
-
-//     date => `Take on ${date} with courage, joy, and the knowledge that every single moment is a precious chance to grow. Trust your journey, celebrate your progress, and remember that you are making a positive difference simply by showing up and trying.`,
-
-//     date => `Step into ${date} with confidence and an open mind, knowing that greatness awaits you around every corner. Let today be the day you push beyond your limits, embrace new challenges, and continue building the future you’ve always dreamed of.`,
-
-//     date => `${date} is a perfect day to nurture your growth, illuminate your path with positivity, and shine even brighter than before. You are capable of amazing things, and with each passing day, you become stronger, wiser, and more resilient.`,
-
-//     date => `Hope you’re feeling grounded, focused, and full of purpose this ${date}. No matter what comes your way, trust that you have the strength to overcome, the wisdom to learn, and the courage to keep moving forward toward your goals.`,
-
-//     date => `Breathe in calm, confidence, and clarity this ${date}. You are making meaningful progress, even if it’s invisible right now. Trust the process, believe in yourself, and know that your hard work will bear beautiful fruit.`,
-
-//     date => `Let the vibrant energy of ${date} lift your spirits and fuel your ambition. You are a force of nature—capable, strong, and ready to conquer whatever challenges this day may bring. Keep believing, keep striving, and keep shining.`,
-
-//     date => `This ${date}, take a moment to honor how far you’ve come and the courage it took to get here. Keep rising above doubts and fears, knowing that your resilience is your superpower and your future is as bright as your dreams.`,
-
-//     date => `May ${date} bring peace to your heart, clarity to your mind, and joy to your soul. As you navigate through this day, remember that kindness—both to yourself and others—is the greatest strength, and your journey is unique and valuable.`,
-
-//     date => `${date} is a blank slate, a chance for you to write your story with courage, kindness, and determination. Stay strong in the face of challenges, stay gentle with yourself, and keep nurturing the incredible person you are becoming.`,
-
-//     date => `Embrace the pace of progress this ${date}—whether it’s fast or slow, every step forward counts. Trust that each effort you make is meaningful, and celebrate the journey as much as the destination, knowing that growth takes time and patience.`,
-
-//     date => `Sending you waves of positive energy, steady focus, and boundless motivation this ${date}. You are capable of extraordinary things, and with each breath and each action, you’re moving closer to the life you envision.`,
-
-//     date => `Let ${date} be a gentle yet powerful reminder that you are capable of amazing things. Your potential is limitless, your spirit is indomitable, and your journey—though sometimes tough—is filled with endless moments of beauty and triumph. Keep shining, always.`,
-
-//     date => `As the sun rises on this beautiful ${date}, let it remind you that each new day carries the promise of fresh opportunities, new lessons, and moments of joy. Step forward with courage and a heart full of hope, knowing that you have the power to create something truly remarkable.`,
-
-//     date => `On this extraordinary ${date}, may you find strength in your challenges, wisdom in your experiences, and joy in your victories. Remember, greatness is built one step at a time, and today is the perfect day to take that next step with confidence.`,
-
-//     date => `This ${date} is a wonderful invitation to dream boldly and act purposefully. Believe in your talents, trust the journey, and know that every effort you make, no matter how small, is a building block toward a future full of success and happiness.`,
-
-//     date => `Good ${date}! Let today be a reminder that you are more powerful than any obstacle and more determined than any setback. Embrace the day with an open mind and a resilient spirit, ready to transform challenges into triumphs.`,
-
-//     date => `May this ${date} fill your heart with inspiration and your mind with clarity. Remember that the path to success is paved with perseverance, self-belief, and the willingness to keep moving forward no matter what.`,
-
-//     date => `Welcome to ${date}, a day bursting with potential and endless possibilities. Let your passion be your guide and your determination be your fuel as you pursue your goals and make a positive impact on the world around you.`,
-
-//     date => `As you greet this ${date}, take a moment to appreciate the journey so far and envision the incredible heights you are yet to reach. Your dedication and courage are lighting the way—keep pushing, keep striving, and keep believing.`,
-
-//     date => `This ${date} offers a fresh start and a chance to reinvent yourself. Embrace every opportunity with enthusiasm, tackle challenges with grit, and remember that your unique journey is something to be proud of every single day.`,
-
-//     date => `On this inspiring ${date}, may you find clarity amidst chaos, strength in adversity, and joy in your progress. The world needs your unique light, so shine brightly and never underestimate the impact you can have.`,
-
-//     date => `Today, on ${date}, be proud of your resilience and the courage that has brought you this far. Every challenge you face is a stepping stone to greatness, and your spirit is capable of turning dreams into reality.`,
-
-//     date => `May the energy of ${date} inspire you to embrace change, welcome growth, and pursue your passions relentlessly. You are the author of your story—write it with confidence, kindness, and unwavering determination.`,
-
-//     date => `As the world awakens on this ${date}, take a deep breath and center yourself. Let gratitude fill your heart, positivity guide your actions, and perseverance be your constant companion on the road ahead.`,
-
-//     date => `On this glorious ${date}, remember that your journey is unique and your potential limitless. No matter the obstacles, your spirit is unbreakable, and your dreams are worth every ounce of effort you put forth.`,
-
-//     date => `This ${date} is a blank page ready for you to write your story of courage, kindness, and success. Embrace the unknown with curiosity and the challenges with determination—you are capable of extraordinary achievements.`,
-
-//     date => `Step into ${date} with a heart full of hope and a mind clear of doubt. Every moment is a new chance to grow, learn, and move closer to the incredible life you’re building one day at a time.`,
-
-//     date => `May the promise of ${date} remind you to pause, reflect, and appreciate the journey you are on. You are stronger than you realize, and each step forward is a testament to your resilience and dedication.`,
-
-//     date => `Today, on ${date}, give yourself permission to shine, to take risks, and to embrace every opportunity with open arms. Your potential knows no bounds, and the future you dream of is within reach.`,
-
-//     date => `As ${date} unfolds, let it be a gentle nudge to believe in yourself, to nurture your dreams, and to celebrate the small wins that lead to big successes. Your persistence and passion make all the difference.`,
-
-//     date => `On this inspiring ${date}, remember that every effort you make, no matter how small, plants a seed for future growth and achievement. Keep watering your dreams with faith and hard work—they will blossom beautifully.`,
-
-//     date => `Welcome this ${date} with optimism and determination. You are the architect of your own destiny, capable of shaping a future filled with joy, purpose, and endless possibilities. Keep going—the best is yet to come.`
-
-//     ];
-
-  const today = new Date().toLocaleDateString('en-US', {
-    month: 'long', day: 'numeric', year: 'numeric'
+  const today = new Date().toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
   });
 
-  const greetingMessage = greetings[Math.floor(Math.random() * greetings.length)](today);
+  const greetingMessage =
+    greetings[Math.floor(Math.random() * greetings.length)](today);
   const fullMessage = `Hi! Kao here 😄 Glad to see you!\n\n${greetingMessage}\n\nReady for a brain workout? 💡\nChoose difficulty: easy, medium, or hard`;
 
   showTypingPopup(fullMessage);
@@ -462,7 +410,7 @@ function showTypingPopup(message) {
   const buttonsWrapper = document.createElement("div");
   buttonsWrapper.style.marginBottom = "15px";
 
-  difficulties.forEach(level => {
+  difficulties.forEach((level) => {
     const btn = document.createElement("button");
     btn.textContent = level.charAt(0).toUpperCase() + level.slice(1);
     btn.dataset.difficulty = level;
@@ -479,7 +427,7 @@ function showTypingPopup(message) {
 
     btn.onclick = () => {
       // Reset all buttons
-      Array.from(buttonsWrapper.children).forEach(b => {
+      Array.from(buttonsWrapper.children).forEach((b) => {
         b.style.backgroundColor = "#eee";
         b.style.color = "#000";
         b.style.boxShadow = "none";
