@@ -1,1 +1,1 @@
-**🚀 My Research Journey:** 👉 [Google Scholar - Panboonyuen](https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en)
+🚀 From Idea to Innovation: [Google Scholar - Panboonyuen](https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en)
