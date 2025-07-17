@@ -64,19 +64,44 @@
       background-color: #f9fafb;
     }
     header {
-      background-color: #000000;
-      color: white;
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.25rem;
-      color: #cbd5e1;
-    }
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #000; /* ensure background stays black */
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+  transition: font-size 0.3s ease;
+}
+
+header p {
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  transition: opacity 0.3s ease;
+}
+
+/* When page scrolls down */
+header.shrink {
+  padding: 1rem 2rem;
+}
+
+header.shrink h1 {
+  font-size: 1.5rem;
+}
+
+header.shrink p {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+}
+
     .section {
       padding: 3rem 2rem;
       max-width: 960px;
@@ -133,14 +158,44 @@
   </style>
 </head>
 <body>
-  <header>
-    <!-- <h1>MYRIDA</h1> -->
-     <h1><img src="img/MYRIDA.svg" alt="Fish logo" style="height: 1em; vertical-align: middle;"> MYRIDA</h1>
-    <p>My Rethinking of Intelligent and Deep AI</p>
-    <!-- <p>Building AI for a Healthier Earth</p> -->
-  </header>
 
+  
+<header>
+  <h1>
+    <a href="#" id="scrollToTop" style="color: white; text-decoration: none;">
+      <img src="img/MYRIDA.svg" alt="Fish logo" style="height: 1em; vertical-align: middle;"> MYRIDA
+    </a>
+  </h1>
+  <p>My Rethinking of Intelligent and Deep AI</p>
+</header>
 
+<script>
+  document.getElementById('scrollToTop').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  let isThrottled = false;
+  window.addEventListener('scroll', function () {
+    if (isThrottled) return;
+
+    isThrottled = true;
+
+    setTimeout(() => {
+      const header = document.querySelector('header');
+      // เปลี่ยนจาก 50 เป็น 0 เพื่อให้ shrink ทันทีที่ scroll ลงนิดเดียว
+      if (window.scrollY > 0) {
+        header.classList.add('shrink');
+      } else {
+        header.classList.remove('shrink');
+      }
+      isThrottled = false;
+    }, 100); // รันทุก 100ms
+  });
+</script>
 
 
 
