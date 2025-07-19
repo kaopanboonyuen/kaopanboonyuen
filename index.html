@@ -47,7 +47,7 @@
     "url": "https://www.chula.ac.th/"
   },
   "url": "https://myrida.pages.dev/members/teerapong-panboonyuen/",
-  "image": "https://myrida.pages.dev/img/teerapong-panboonyuen-ธีรพงศ์-ปานบุญยืน.jpg",
+  "image": "https://myrida.pages.dev/img/teerapong-panboonyuen-ธีรพงศ์-ปานบุญยืน_ITALY.jpg",
   "sameAs": [
     "https://kaopanboonyuen.github.io/"
   ]
@@ -167,6 +167,10 @@ header.shrink p {
     </a>
   </h1>
   <p>My Rethinking of Intelligent and Deep AI</p>
+  
+    <!-- Add my meta description -->
+<meta name="description" content="MYRIDA is built for minds that question, and hearts that care. We rethink AI to be wise, ethical, and in harmony with humanity and the planet. Progress with purpose." />
+  
 </header>
 
 <script>
@@ -197,6 +201,52 @@ header.shrink p {
   });
 </script>
 
+
+
+<section style="background-color: #ffffff; text-align: center; padding: 2rem 1rem; color: #1f2937;">
+  <div style="
+    background-color: #f3f4f6;
+    border-left: 4px solid #adaeae;
+    border-radius: 0.75rem;
+    padding: 1.5rem 1.25rem;
+    max-width: 720px;
+    margin: 0 auto;
+    font-style: italic;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  ">
+    <p id="typedQuote" style="font-size: 1.05rem; color: #374151; margin: 0; white-space: pre-wrap;"></p>
+    <p id="quoteSignature" style="
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: #6b7280;
+      text-align: right;
+      font-style: normal;
+      opacity: 0;
+      transition: opacity 1s ease;
+    ">
+      — Kao Panboonyuen
+    </p>
+  </div>
+</section>
+
+<script>
+  const text = `“MYRIDA is built for minds that question, and hearts that care. We believe AI shouldn't just be powerful — it should be wise. We design intelligence with ethics, empathy, and Earth in mind. Innovation that heals. Progress with purpose.”`;
+  let index = 0;
+  const speed = 25; // ms per character
+
+  function typeWriter() {
+    if (index < text.length) {
+      document.getElementById("typedQuote").innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, speed);
+    } else {
+      // Show signature after typing completes
+      document.getElementById("quoteSignature").style.opacity = 1;
+    }
+  }
+
+  window.addEventListener("load", typeWriter);
+</script>
 
 
 
@@ -230,8 +280,8 @@ header.shrink p {
     <!-- Fixed size image on left -->
    <a id="image-link" href="#">
   <img 
-      src="img/teerapong-panboonyuen-ธีรพงศ์-ปานบุญยืน.jpg" 
-      alt="ดร.ธีรพงศ์ ปานบุญยืน" 
+      src="img/teerapong-panboonyuen-ธีรพงศ์-ปานบุญยืน_ITALY.jpg" 
+      alt="ธีรพงศ์ ปานบุญยืน" 
       style="
         width: 320px; 
         height: 320px; 
@@ -447,6 +497,17 @@ header.shrink p {
     <a href="https://ieeexplore.ieee.org/document/10929005" target="_blank">PDF</a>
     <a href="https://github.com/kaopanboonyuen/SatDiff" target="_blank">CODE</a>
     <a href="https://kaopanboonyuen.github.io/SatDiff/" target="_blank">PROJECT</a>
+    <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
+  </div>
+</div>
+
+<div class="pub">
+  <h3>CU-ICU: Customizing Instruction-Tuned Language Models for Critical Care</h3>
+  <p><strong>Teerapong Panboonyuen</strong>, et al. <em>The 14th Critical Care Conference</em></p>
+  <div class="buttons">
+    <a href="https://kaopanboonyuen.github.io/files/paper/Panboonyuen_CUICU_TSCCM2025_arXiv.pdf" target="_blank">PDF</a>
+    <a href="https://kaopanboonyuen.github.io/blog/2025-07-17-cuicu-customizing-unsupervised-instruction-finetuned-language-models/" target="_blank">BLOG</a>
+    <a href="https://kaopanboonyuen.github.io/files/slides/Panboonyuen_CUICU_TSCCM2025_Slide.pdf" target="_blank">SLIDE</a>
     <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
   </div>
 </div>
