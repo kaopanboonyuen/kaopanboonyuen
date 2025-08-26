@@ -4,32 +4,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MYRIDA</title>
+  <title>MYRIDA.TECH</title>
 
   <!-- Favicon with tree emoji SVG -->
   <!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><text y=%2224%22 font-size=%2232%22>🐟</text></svg>" /> -->
-  <link rel="icon" type="image/svg+xml" href="img/MYRIDA.svg" />
+  <!-- <link rel="icon" type="image/svg+xml" href="img/MYRIDA.svg" /> -->
+
+  <!-- Favicon with T-Rex emoji SVG -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><text y=%2224%22 font-size=%2232%22>🦤</text></svg>" />
 
   <!-- Open Graph for Facebook, LinkedIn, etc. -->
-  <meta property="og:image" content="https://myrida.pages.dev/img/MYRIDA.png" />
+  <meta property="og:image" content="https://myridatech.github.io/img/MYRIDA.png" />
   <meta property="og:title" content="MYRIDA" />
   <meta property="og:description" content="My Rethinking of Intelligent and Deep AI" />
-  <meta property="og:url" content="https://myrida.pages.dev/" />
+  <meta property="og:url" content="https://myridatech.github.io/" />
   <meta property="og:type" content="website" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="MYRIDA" />
   <meta name="twitter:description" content="My Rethinking of Intelligent and Deep AI" />
-  <meta name="twitter:image" content="https://myrida.pages.dev/img/MYRIDA.png" />
+  <meta name="twitter:image" content="https://myridatech.github.io/img/MYRIDA.png" />
 
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "MYRIDA",
-  "url": "https://myrida.pages.dev/",
-  "logo": "https://myrida.pages.dev/img/MYRIDA.png"
+  "url": "https://myridatech.github.io/",
+  "logo": "https://myridatech.github.io/img/MYRIDA.png"
 }
 </script>
 
@@ -46,8 +49,8 @@
     "alternateName": "จุฬาลงกรณ์มหาวิทยาลัย",
     "url": "https://www.chula.ac.th/"
   },
-  "url": "https://myrida.pages.dev/members/teerapong-panboonyuen/",
-  "image": "https://myrida.pages.dev/img/teerapong-panboonyuen-ธีรพงศ์-ปานบุญยืน_ITALY.jpg",
+  "url": "https://myridatech.github.io/members/teerapong-panboonyuen/",
+  "image": "https://myridatech.github.io/img/teerapong-panboonyuen-ธีรพงศ์-ปานบุญยืน_ITALY.jpg",
   "sameAs": [
     "https://kaopanboonyuen.github.io/"
   ]
@@ -167,19 +170,355 @@
     a:hover {
       text-decoration: underline;
     }
+
+
+
+
+
+.spotlight {
+  background: #fff;
+  padding: 4rem 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.spotlight-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Media (Image) styling */
+.spotlight-media img {
+  width: 100%;
+  border-radius: 0.8rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+/* Title styling */
+.spotlight-info h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.6rem;
+  color: #111;
+}
+
+.spotlight-info h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+/* Metadata (Author, Date, etc.) */
+.spotlight-info .meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.spotlight-info .abstract {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* CTA (Call to Action) Buttons */
+.cta a {
+  display: inline-block;
+  margin-right: 0.8rem;
+  margin-bottom: 0.6rem;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--text);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.2s ease;
+  max-width: 100%; /* Prevent overflow */
+  width: auto; /* Let the button resize dynamically */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* .cta a:hover {
+  background: var(--text);
+  color: #fff;
+} */
+
+/* Mobile-first: Make adjustments for smaller screens (mobile/tablet) */
+@media (max-width: 768px) {
+  .spotlight-grid {
+    grid-template-columns: 1fr; /* Stack the content for mobile */
+    padding: 2rem 1rem; /* Reduce padding for mobile */
+  }
+
+  .spotlight-media img {
+    max-width: 100%;
+  }
+
+  .spotlight-info h2 {
+    font-size: 1.5rem; /* Smaller title for mobile */
+  }
+
+  .spotlight-info h3 {
+    font-size: 1.1rem; /* Adjust heading size */
+  }
+
+  .spotlight-info .meta {
+    font-size: 0.85rem; /* Adjust metadata size */
+  }
+
+  .spotlight-info .abstract {
+    font-size: 0.95rem; /* Adjust abstract font size */
+  }
+
+  .cta {
+    display: flex;
+    flex-direction: column; /* Stack buttons for mobile */
+    gap: 1rem;
+  }
+
+  .cta a {
+    width: 100%; /* Make buttons full-width on mobile */
+    padding: 0.8rem 1.5rem; /* Larger buttons on mobile */
+    box-sizing: border-box; /* Ensure padding doesn't overflow */
+    margin: 0 auto; /* Center the buttons */
+  }
+  
+
+}
+
+/* Desktop-specific adjustments for better view */
+@media (min-width: 769px) {
+  .cta a {
+    width: auto; /* Buttons back to default width for desktop */
+    margin-bottom: 0.6rem;
+  }
+}
+
+
+
+
+
+
+
+.game-section {
+  max-width: 880px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.game-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.game-emoji {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.game-card h2 {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.game-subtitle {
+  margin: 0.25rem 0 1.25rem;
+  color: #4b5563;
+  font-size: 1rem;
+}
+
+.game-button {
+  display: inline-block;
+  padding: 0.9rem 1.8rem;
+  background: #111;
+  color: #fff;
+  border: 2px solid #111;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Add smooth transition */
+}
+
+.game-button:hover {
+  background: #fff;
+  color: #111;
+}
+
+.game-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(17,17,17,0.15);
+}
+
+
+.game-note {
+  margin-top: 0.9rem;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.game-noscript {
+  margin-top: 1rem;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+
+
+
+
+/* Container like game-section */
+.bio-section {
+  max-width: 880px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+/* Card like game-card */
+.bio-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Language toggle button */
+.lang-toggle {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+.lang-toggle button {
+  padding: 0.6rem 1.2rem;
+  background: #111;
+  color: #fff;
+  border: 2px solid #111;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.lang-toggle button:hover {
+  background: #fff;
+  color: #111;
+}
+
+/* Bio image on top */
+.bio-image img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  /* border: 4px solid #e5e7eb; */
+  /* margin-bottom: 1.25rem; */
+}
+
+/* Title */
+.bio-title {
+  margin: 0.5rem 0 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 2em;
+}
+
+/* Name */
+.bio-name {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #111;
+  cursor: pointer;
+}
+.bio-name:hover {
+  text-decoration: underline;
+}
+
+/* Degree */
+.bio-degree {
+  margin: 0.25rem 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Text */
+.bio-text {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #555;
+  text-align: justify;
+  margin-top: 1em;
+}
+
+.bio-link {
+  margin-top: 2rem;
+}
+.bio-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #444;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.bio-link a:hover {
+  color: #0077ff;
+}
+
+
+.bio-button {
+  display: inline-block;
+  padding: 0.9rem 1.8rem;
+  background: #111;
+  color: #fff;
+  border: 2px solid #111;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bio-button:hover {
+  background: #fff;
+  color: #111;
+}
+
+
+
+
+
+
   </style>
 </head>
 
 <body>
 
 
-  <header>
-    <h1>
-      <a href="#" id="scrollToTop" style="color: white; text-decoration: none;">
-        <img src="img/MYRIDA.svg" alt="Fish logo" style="height: 1em; vertical-align: middle;"> MYRIDA
-      </a>
-    </h1>
-    <p>My Rethinking of Intelligent and Deep AI</p>
+<header>
+  <h1>
+    <a href="#" id="scrollToTop" style="color: white; text-decoration: none;">
+      <span style="font-size: 1.2em; vertical-align: middle;">🦤</span> MYRIDA
+    </a>
+  </h1>
+  <p>My Rethinking of Intelligent and Deep AI</p>
+</header>
+
 
     <!-- Add my meta description -->
     <meta name="description"
@@ -262,140 +601,158 @@
 
 
 
-  <section class="section" style="max-width: 900px; margin: 2rem auto; padding: 1rem;">
-    <!-- Language toggle button -->
-    <div style="text-align: right; margin-bottom: 1.5rem;">
-      <button id="langToggleBtn" onclick="switchLanguage()" style="
-        padding: 0.6rem 1.2rem; 
-        background-color: #000000; 
-        color: white; 
-        border: none; 
-        border-radius: 10px; 
-        cursor: pointer; 
-        font-weight: 700;
-        font-size: 1.1rem;
-        box-shadow: default;
-        transition: background-color 0.3s ease;
-      " onmouseover="this.style.backgroundColor='#000000FF'" onmouseout="this.style.backgroundColor='#000000FF'">
-        Switch to English
-      </button>
+
+<section class="spotlight">
+  <div class="spotlight-grid">
+    
+    <!-- Left: Graphical Abstract -->
+    <div class="spotlight-media">
+      <img src="img/GuidedBox_compact.png" alt="GuidedBox Graphical Abstract">
     </div>
 
-    <h2 style=>🧙🏻 Chief AI Architect</h2>
+    <!-- Right: Metadata + Abstract -->
+    <div class="spotlight-info">
+      <h2>🚀 Spotlight Highlight</h2>
 
-    <div style="display: flex; gap: 3rem; align-items: center; flex-wrap: wrap;">
-      <!-- Fixed size image on left -->
-      <a id="image-link" href="#">
-        <img src="img/teerapong-panboonyuen-ธีรพงศ์-ปานบุญยืน_ITALY.jpg" alt="ธีรพงศ์ ปานบุญยืน" style="
-        width: 320px; 
-        height: 320px; 
-        object-fit: cover; 
-        border-radius: 20px; 
-        box-shadow: default;
-        flex-shrink: 0;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
-      " onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 18px 36px rgba(0, 0, 0, 0.18)';"
-          onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 12px 24px rgba(0, 0, 0, 0.12)';" />
-      </a>
+      <hr class="separator">
 
+      <h3>GuidedBox: a segmentation-guided box teacher-student approach for weakly supervised road segmentation</h3>
+      
+      <hr class="separator">
 
-      <script>
-        // Dynamically get the current domain and base path
-        const domain = window.location.origin;  // This gets the full domain (e.g., https://kaopanboonyuen.github.io)
-        const basePath = window.location.pathname.split('/')[1];  // Get the subdirectory or empty string for root
-
-        // Construct the dynamic URL
-        const path = "/members/teerapong-panboonyuen/";  // The relative path for the image click
-
-        // If basePath exists (subdirectory), append it to the domain, else just use the domain
-        const url = basePath ? `${domain}/${basePath}${path}` : `${domain}${path}`;
-
-        // Set the href of the anchor tag dynamically
-        const imageLink = document.getElementById('image-link');
-        imageLink.href = url;  // Set the link dynamically
-      </script>
+      <p class="meta">
+        <strong>Teerapong Panboonyuen</strong><br>
+        Published in <strong>European Journal of Remote Sensing 2025</strong><br>
+        <span class="publisher">Published by <strong>Taylor & Francis</strong></span>
+      </p>
+      
+      <hr class="separator">
+      
+      <p class="abstract">
+        Road segmentation in remote sensing is vital for urban planning, traffic monitoring, and autonomous driving. 
+        GuidedBox introduces an end-to-end framework leveraging a teacher model to generate pseudo-labels, 
+        with novel noise-aware confidence scoring and pixel loss. 
+        It outperforms state-of-the-art methods on the Massachusetts Roads Dataset (AP50 = <strong>0.9231</strong>) 
+        and shows robustness across SpaceNet and DeepGlobe datasets.
+      </p>
 
 
-      <!-- Text container -->
-      <div style="flex: 1; min-width: 0;">
-        <!-- Thai Content -->
-        <div id="thaiContent" style="display: block;">
-          <h3 style="
-            font-size: 1.6rem; 
-            font-weight: 800; 
-            margin-bottom: 0.7rem; 
-            color: #222;
-            cursor: pointer; 
-            text-decoration: none;
-          " onclick="window.location.href='members/teerapong-panboonyuen/'"
-            onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
-            ธีรพงศ์ ปานบุญยืน (ดร.เก้า)
-          </h3>
-          <p style="font-weight: 700; font-size: 1.1rem; margin: 0 0 0.7rem; color: #444;">Ph.D. in Computer
-            Engineering, Chulalongkorn University</p>
-          <p style="font-size: 1rem; line-height: 1.65; color: #555; text-align: justify;">
-            ดร.เก้า ปัจจุบันดำรงตำแหน่งนักวิจัยปัญญาประดิษฐ์ที่ MARSAIL (Motor AI Recognition Solution Artificial
-            Intelligence Laboratory)
-            และได้รับทุนหลังปริญญาเอกระดับศักยภาพสูงสุด (Track A) จากโครงการ The Second Century Fund (C2F)
-            ของจุฬาลงกรณ์มหาวิทยาลัย
-            ผลงานวิจัยของ ดร.เก้า มุ่งเน้นไปที่การเรียนรู้เชิงแทนความหมาย (Representation Learning),
-            ทฤษฎีการหาค่าที่เหมาะสมที่สุด (Optimization Theory)
-            และการเรียนรู้แบบไร้ผู้สอน (Self-Supervised Learning) โดยมีความเชี่ยวชาญพิเศษในสาขา Computer Vision,
-            Geospatial Intelligence
-            และการโต้ตอบระหว่างมนุษย์และปัญญาประดิษฐ์ (Human-AI Interaction) ซึ่งกำลังเปลี่ยนโฉมหน้าของเทคโนโลยีสมัยใหม่
-          </p>
-        </div>
-
-        <!-- English Content -->
-        <div id="englishContent" style="display: none;">
-          <h3 style="
-            font-size: 1.6rem; 
-            font-weight: 800; 
-            margin-bottom: 0.7rem; 
-            color: #222;
-            cursor: pointer; 
-            text-decoration: none;
-          " onclick="window.location.href='members/teerapong-panboonyuen/'"
-            onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
-            Teerapong Panboonyuen
-          </h3>
-          <p style="font-weight: 700; font-size: 1.1rem; margin: 0 0 0.7rem; color: #444;">Ph.D. in Computer
-            Engineering, Chulalongkorn University</p>
-          <p style="font-size: 1rem; line-height: 1.65; color: #555; text-align: justify;">
-            Dr. Kao currently serves as an AI researcher at MARSAIL (Motor AI Recognition Solution Artificial
-            Intelligence Laboratory).
-            He is a recipient of the prestigious Postdoctoral Fellowship (Track A) from the Second Century Fund (C2F) at
-            Chulalongkorn University.
-            He is one of the select Thai researchers awarded the esteemed Global Young Scientists Summit (GYSS) 2025
-            scholarship, generously conferred by Her Royal Highness Princess Maha Chakri Sirindhorn.
-            His research primarily focuses on representation learning, optimization theory, self-supervised learning,
-            and the evolving field of Human-AI Interaction.
-          </p>
-        </div>
-
-        <!-- Personal website link -->
-        <div style="margin-top: 2rem;">
-          <a href="https://kaopanboonyuen.github.io/" target="_blank" style="
-             display: inline-flex; 
-             align-items: center; 
-             gap: 0.5rem; 
-             color: #414244; 
-             font-weight: 700; 
-             font-size: 1.05rem;
-             text-decoration: none;
-             transition: color 0.3s ease;
-           " onmouseover="this.style.color='#454852FF'" onmouseout="this.style.color='#33353BFF'">
-            <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" fill="#404247FF">
-              <path
-                d="M10.9 2.1c-.6 0-1.3.1-1.9.2-2.6.5-4.6 2.6-5.1 5.2-.3 1.6-.3 3.3-.3 4.8 0 3.2 2.5 5.7 5.7 5.7.8 0 1.6-.1 2.3-.4.4-.1.7.1.8.5.1.5.2 1 .2 1.4 0 .3-.2.5-.5.6-1.8.4-3.6.6-5.3.6-.3 0-.5.2-.5.5v.1c0 .2.2.5.5.5h.3c6.6-.1 11.9-5.5 11.9-12.2 0-3.2-1.3-6.2-3.5-8.4C16.2 2.4 13.6 2.1 10.9 2.1z" />
-            </svg>
-            Visit Personal Website
-          </a>
-        </div>
+      <div class="cta">
+        <a href="https://www.tandfonline.com/doi/full/10.1080/22797254.2025.2540963" target="_blank" class="cta-button">📖 Read Paper</a>
+        <a href="https://doi.org/10.1080/22797254.2025.2540963" target="_blank" class="cta-button">🔗 Cite</a>
+        <!-- <a href="https://www.tandfonline.com/doi/pdf/10.1080/22797254.2025.2540963" target="_blank" class="cta-button">📄 PDF</a> -->
+        <a href="https://github.com/kaopanboonyuen/GuidedBox" target="_blank" class="cta-button">💻 Code</a>
       </div>
     </div>
-  </section>
+
+  </div>
+</section>
+
+
+
+<section class="bio-section">
+  <div class="bio-card">
+    <!-- Language toggle -->
+    <div class="lang-toggle">
+      <button id="langToggleBtn" onclick="switchLanguage()">Switch to English</button>
+    </div>
+
+    <!-- Image centered -->
+    <div class="bio-image">
+      <a id="image-link" href="members/teerapong-panboonyuen/" rel="noopener noreferrer">
+        <img src="img/teerapong-panboonyuen-ธีรพงศ์-ปานบุญยืน_ITALY.jpg" 
+             alt="ธีรพงศ์ ปานบุญยืน">
+      </a>
+    </div>
+
+    <!-- Title -->
+    <!-- <h2 class="bio-title">Lead Researcher & Founder, MYRIDA</h2> -->
+
+    <!-- Thai content -->
+    <div id="thaiContent" class="bio-content">
+      <h3 class="bio-name">
+        <a href="members/teerapong-panboonyuen/" rel="noopener noreferrer">
+          ธีรพงศ์ ปานบุญยืน (ดร.เก้า)
+        </a>
+      </h3>
+
+<h4 class="bio-title">Founder & Principal Investigator, MYRIDA</h4>
+
+
+      <!-- <p class="bio-degree">Ph.D. in Computer Engineering, Chulalongkorn University</p> -->
+      <p class="bio-text">
+        ดร.ธีรพงศ์ ปานบุญยืน หรือที่รู้จักกันในชื่อ “ดร.เก้า” เป็นนักวิจัยผู้มีความเชี่ยวชาญด้านปัญญาประดิษฐ์
+      โดยปัจจุบันดำรงตำแหน่งนักวิจัยหลักที่ MARSAIL (Motor AI Recognition Solution Artificial Intelligence Laboratory)
+      ซึ่งเป็นห้องปฏิบัติการวิจัยแนวหน้าที่บูรณาการเทคโนโลยี AI กับอุตสาหกรรมประกันภัยรถยนต์<br /><br />
+      ในด้านการศึกษา ดร.เก้า สำเร็จการศึกษาระดับปริญญาเอก สาขาวิศวกรรมคอมพิวเตอร์ (วิศวกรรมศาสตรดุษฎีบัณฑิต)
+      จากจุฬาลงกรณ์มหาวิทยาลัย โดยใช้ระยะเวลาเพียง 2 ปีครึ่ง ภายใต้การสนับสนุนทุนการศึกษาหลักสูตรดุษฎีบัณฑิต 100
+      ปีจุฬาลงกรณ์มหาวิทยาลัย และทุน 90 ปีจุฬาลงกรณ์มหาวิทยาลัย ก่อนหน้านี้
+      สำเร็จการศึกษาระดับปริญญาโทในสาขาเดียวกันจากจุฬาลงกรณ์มหาวิทยาลัยเช่นกัน ภายในระยะเวลา 1 ปีครึ่ง
+      ภายใต้ทุนอุดหนุนการศึกษาระดับบัณฑิตศึกษาจุฬาลงกรณ์มหาวิทยาลัย
+      เพื่อเฉลิมฉลองวโรกาสที่พระบาทสมเด็จพระเจ้าอยู่หัวทรงเจริญพระชนมายุครบ 72 พรรษา
+      โดยสำเร็จการศึกษาระดับปริญญาเอกได้ในวัยเพียง 27 ปี
+      ซึ่งสะท้อนถึงศักยภาพและความมุ่งมั่นในเส้นทางวิชาการอย่างชัดเจน<br /><br />
+      นอกจากนี้ ดร.เก้ายังได้รับการสนับสนุนทุนระดับสูงสุดจากโครงการ The Second Century Fund (C2F) ใน Track A
+      สำหรับนักวิจัยหลังปริญญาเอกศักยภาพสูง ของจุฬาลงกรณ์มหาวิทยาลัย
+      เพื่อสนับสนุนการวิจัยที่มีอิทธิพลและสร้างผลกระทบต่อวงการเทคโนโลยี AI/ML ในระดับโลก
+      และเป็นหนึ่งในนักวิจัยไทยที่ได้รับพระมหากรุณาธิคุณรับพระราชทานทุน Global Young Scientists Summit (GYSS) ประจำปี
+      2025 จากสมเด็จพระกนิษฐาธิราชเจ้า กรมสมเด็จพระเทพรัตนราชสุดาฯ<br /><br />
+      ดร.เก้ามีความเชี่ยวชาญลึกซึ้งในสาขา Computer Vision ที่ประยุกต์ใช้กับการรู้จำวัตถุ ซีน
+      และความเข้าใจเชิงความหมายของภาพ รวมถึง Geospatial Intelligence
+      ที่วิเคราะห์ข้อมูลจากดาวเทียมและภาพถ่ายทางอากาศเพื่อสนับสนุนการตัดสินใจเชิงพื้นที่
+      อีกทั้งยังให้ความสำคัญกับ Human-AI Interaction
+      ซึ่งเป็นหัวใจสำคัญของการสร้างเทคโนโลยีที่เข้าใจและสื่อสารกับมนุษย์ได้อย่างมีประสิทธิภาพ
+      ด้วยผลงานที่โดดเด่นและวิสัยทัศน์เชิงลึกในอนาคตของ AI
+      ดร.เก้าจึงเป็นหนึ่งในนักวิจัยรุ่นใหม่ที่ได้รับการจับตามองอย่างยิ่งในวงการวิทยาการคอมพิวเตอร์ระดับสากล
+      </p>
+    </div>
+
+    <!-- English content -->
+    <div id="englishContent" class="bio-content" style="display: none;">
+      <h3 class="bio-name">
+        <a href="members/teerapong-panboonyuen/" rel="noopener noreferrer">
+          Teerapong Panboonyuen
+        </a>
+      </h3>
+      <!-- <p class="bio-degree">Ph.D. in Computer Engineering, Chulalongkorn University</p> -->
+       <h4 class="bio-title">Founder & Principal Investigator, MYRIDA</h4>
+
+      <p class="bio-text">
+        Dr. Teerapong Panboonyuen, also known as “Dr. Kao,” is a leading researcher in the field of Artificial
+        Intelligence. He currently serves as the Principal Researcher at MARSAIL (Motor AI Recognition Solution
+        Artificial Intelligence Laboratory), an advanced AI research lab integrating AI into the automotive industry and
+        car insurance.<br /><br />
+        In terms of academic background, Dr. Kao completed his Ph.D. in Computer Engineering (Doctor of Engineering) at
+        Chulalongkorn University in just two and a half years. His doctoral studies were supported by the 100th
+        Anniversary Chulalongkorn University Doctoral Scholarship and the 90th Anniversary of Chulalongkorn University
+        Scholarship. Prior to that, he earned his Master’s degree in the same field from Chulalongkorn University within
+        one and a half years, under the Graduate Scholarship in Celebration of the 72nd Birthday Anniversary of His
+        Majesty the King. Notably, Dr. Kao completed his doctoral degree at the age of 27, reflecting his outstanding
+        academic capability and unwavering dedication.<br /><br />
+        He has been awarded the highest-level postdoctoral research fellowship under the Second Century Fund (C2F Track
+        A) from Chulalongkorn University, supporting high-impact research in AI/ML with global significance. He is also
+        among the few Thai researchers to receive the prestigious Global Young Scientists Summit (GYSS) 2025
+        scholarship, graciously bestowed by Her Royal Highness Princess Maha Chakri Sirindhorn.<br /><br />
+        Dr. Kao's expertise lies in Computer Vision—covering object recognition, scene understanding, and semantic
+        perception—and in Geospatial Intelligence for analyzing satellite and aerial imagery to support spatial
+        decision-making. He also focuses on Human-AI Interaction, a vital component for developing AI technologies that
+        can effectively understand and communicate with humans. With his outstanding contributions and forward-looking
+        vision, Dr. Kao is recognized as a rising figure in the international AI research community.
+      </p>
+    </div>
+
+   <!-- Profile Button -->
+<div class="bio-link">
+  <button class="bio-button" onclick="window.open('https://kaopanboonyuen.github.io/', '_blank')">
+    View Personal Profile
+  </button>
+</div>
+
+  </div>
+</section>
+
+
+
 
 
 
@@ -463,7 +820,7 @@
 
 
 
-  <div style="display: flex; justify-content: center; margin-top: 3rem; padding: 0 1rem;">
+  <!-- <div style="display: flex; justify-content: center; margin-top: 3rem; padding: 0 1rem;">
     <img src="img/MYRIDA.png" alt="MYRIDA" style="
       width: 100%;
       max-width: 480px;
@@ -474,7 +831,7 @@
     " onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 12px 36px rgba(0,0,0,0.25)';"
       onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)';"
       onclick="startGame()" />
-  </div>
+  </div> -->
 
   <!-- Link to myrida-ai-math-game.js file -->
   <script src="myrida-ai-math-game.js" defer></script>
@@ -485,413 +842,6 @@
   </script>
 
 
-
-  <section class="section publications">
-    <h2>📚 Selected Publications</h2>
-
-    <div class="pub">
-      <h3>GuidedBox: A Teacher-Student Approach for Weakly Supervised Segmentation</h3>
-      <p><strong>Teerapong Panboonyuen</strong>, et al. <em>European Journal of Remote Sensing 2025</em></p>
-      <div class="buttons">
-        <a href="https://www.tandfonline.com/doi/full/10.1080/22797254.2025.2540963" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen/GuidedBox" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/GuidedBox/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-      <div class="pub">
-      <h3>CU-ICU: Customizing Instruction-Tuned Language Models for Critical Care</h3>
-      <p><strong>Teerapong Panboonyuen</strong>, et al. <em>The 14th Critical Care Conference</em></p>
-      <div class="buttons">
-        <a href="http://arxiv.org/abs/2507.13655"
-          target="_blank">PDF</a>
-        <a href="https://kaopanboonyuen.github.io/blog/2025-07-17-cuicu-customizing-unsupervised-instruction-finetuned-language-models/"
-          target="_blank">BLOG</a>
-        <a href="https://kaopanboonyuen.github.io/files/slides/Panboonyuen_CUICU_TSCCM2025_Slide.pdf"
-          target="_blank">SLIDE</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>SatDiff: A Stable Diffusion Framework for Satellite Imagery Inpainting</h3>
-      <p><strong>Teerapong Panboonyuen</strong>, et al. <em>IEEE Access 2025</em></p>
-      <div class="buttons">
-        <a href="https://ieeexplore.ieee.org/document/10929005" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen/SatDiff" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/SatDiff/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>SEA‑ViT: Sea Surface Currents Forecasting Using ViT and GRU</h3>
-      <p><strong>Teerapong Panboonyuen</strong>, et al. <em>KST 2025</em></p>
-      <div class="buttons">
-        <a href="https://ieeexplore.ieee.org/document/11003320" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen/gistda-ai-sea-surface-currents" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/gistda-ai-sea-surface-currents/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>REG: Refined Generalized Focal Loss for Road Asset Detection</h3>
-      <p><strong>Teerapong Panboonyuen</strong>, et al. <em>KST 2025</em></p>
-      <div class="buttons">
-        <a href="https://ieeexplore.ieee.org/document/11003314" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen/REG" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/REG/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>SLICK: Selective Localization and Instance Calibration in Automotive Insurance</h3>
-      <p><strong>Teerapong Panboonyuen</strong>, et al. <em>arXiv 2025</em></p>
-      <div class="buttons">
-        <a href="https://arxiv.org/abs/2506.10528" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen/MARS" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/MARS/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>ALBERT: Advanced Localization and Bidirectional Encoder Representations</h3>
-      <p><strong>Teerapong Panboonyuen</strong>, et al. <em>arXiv 2025</em></p>
-      <div class="buttons">
-        <a href="https://arxiv.org/abs/2506.10524" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen/MARS" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/MARS/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-
-    <div class="pub">
-      <h3>MeViT: Medium‑Resolution ViT for Semantic Segmentation</h3>
-      <p><strong>Teerapong Panboonyuen</strong>, et al. <em>Remote Sensing 2023</em></p>
-      <div class="buttons">
-        <a href="https://www.mdpi.com/2072-4292/15/21/5124" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen/MeViT" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/MeViT/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>MARS: Mask Attention Refinement with Quadtree Nodes</h3>
-      <p><strong>Teerapong Panboonyuen</strong>, et al. <em>ICIAP 2023</em></p>
-      <div class="buttons">
-        <a href="https://link.springer.com/chapter/10.1007/978-3-031-51023-6_3" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen/MARS" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/MARS/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    
-
-    <div class="pub">
-      <h3>Semantic Segmentation on Remotely Sensed Images (Ph.D. Thesis)</h3>
-      <p><strong>Teerapong Panboonyuen</strong>, et al. <em>Chula 2019</em></p>
-      <div class="buttons">
-        <a href="https://digital.car.chula.ac.th/chulaetd/8534/" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen/FusionNetGeoLabel" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/files/panboonyuen_phd_defense_2020.pdf" target="_blank">SLIDE</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>Semantic Road Segmentation (M.Eng. Thesis)</h3>
-      <p><strong>Teerapong Panboonyuen</strong>, et al. <em>Chula 2016</em></p>
-      <div class="buttons">
-        <a href="https://www.car.chula.ac.th/display7.php?bib=2156287" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen/FusionNetGeoLabel" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/files/panboonyuen_IC2IT2017_BestPaperAward.pdf"
-          target="_blank">SLIDE</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>Object Detection on Thai Highways with YOLOX</h3>
-      <p><strong>Teerapong Panboonyuen</strong>, et al. <em>Information 2022</em></p>
-      <div class="buttons">
-        <a href="https://www.mdpi.com/2078-2489/13/1/5" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen/REG" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/blog/2024-09-07-refined-generalized-focal-loss-for-road-asset-detection-on-thai-highways-using-vision-models/"
-          target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-
-    
-
-    <div class="pub">
-      <h3>Transformer-Based Decoder Designs for RS Images</h3>
-      <p><strong>Teerapong Panboonyuen</strong>, et al. <em>Remote Sensing 2021</em></p>
-      <div class="buttons">
-        <a href="https://www.mdpi.com/2072-4292/13/24/5100" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen/FusionNetGeoLabel" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/FusionNetGeoLabel/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>Feature Fusion-Based Semantic Labeling</h3>
-      <p><strong>Teerapong Panboonyuen</strong>, et al. <em>Remote Sensing 2020</em></p>
-      <div class="buttons">
-        <a href="https://www.mdpi.com/2072-4292/12/8/1233" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen/FusionNetGeoLabel" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/files/panboonyuen_IC2IT2017_BestPaperAward.pdf"
-          target="_blank">SLIDE</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>Enhanced GCN for Semantic Segmentation with Attention</h3>
-      <p><strong>Teerapong Panboonyuen</strong>, et al. <em>Remote Sensing 2019</em></p>
-      <div class="buttons">
-        <a href="https://www.mdpi.com/2072-4292/11/1/83" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen/FusionNetGeoLabel" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/FusionNetGeoLabel/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>CNN with Landscape Metrics for Road Segmentation</h3>
-      <p><strong>Teerapong Panboonyuen</strong>, et al. <em>Remote Sensing 2017</em></p>
-      <div class="buttons">
-        <a href="https://www.mdpi.com/2072-4292/9/7/680" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen/FusionNetGeoLabel" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/FusionNetGeoLabel/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>Enhanced Encoder-Decoder for Aerial Imagery</h3>
-      <p><strong>Teerapong Panboonyuen</strong>, et al. <em>IC2IT 2017</em></p>
-      <div class="buttons">
-        <a href="https://link.springer.com/chapter/10.1007/978-3-319-78933-7_1" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen/FusionNetGeoLabel" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/FusionNetGeoLabel/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>Real‑Time Polyps Segmentation for Colonoscopy</h3>
-      <p>(As Co-Author) <strong>Teerapong Panboonyuen</strong>, et al. <em>MMM 2018</em></p>
-      <div class="buttons">
-        <a href="https://link.springer.com/chapter/10.1007/978-3-319-73603-7_32" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>Flood Susceptibility Assessment with GIS vs NN</h3>
-      <p>(As Co-Author) <strong>Teerapong Panboonyuen</strong>, et al. <em>Trends in Sciences 2022</em></p>
-      <div class="buttons">
-        <a href="https://tis.wu.ac.th/index.php/tis/article/view/2038" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>Road Map Extraction from Satellite Imagery</h3>
-      <p>(As Co-Author) <strong>Teerapong Panboonyuen</strong>, et al. <em>IEEE Big Data 2017</em></p>
-      <div class="buttons">
-        <a href="https://ieeexplore.ieee.org/document/8258330" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>Semantic Segmentation Using Remote Sensing Indices</h3>
-      <p>(As Co-Author) <strong>Teerapong Panboonyuen</strong>, et al. <em>JCSSE 2018</em></p>
-      <div class="buttons">
-        <a href="https://ieeexplore.ieee.org/document/8457378" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>Transportation Mobility Factor Extraction</h3>
-      <p>(As Co-Author) <strong>Teerapong Panboonyuen</strong>, et al. <em>STUD 2019</em></p>
-      <div class="buttons">
-        <a href="https://ieeexplore.ieee.org/document/9018796" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>Enhanced FPN ViT for Thailand Landsat‑8</h3>
-      <p>(As Co-Author) <strong>Teerapong Panboonyuen</strong>, et al. <em>Information 2022</em></p>
-      <div class="buttons">
-        <a href="https://www.mdpi.com/2078-2489/13/5/259" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>Bangkok Urbanscapes Dataset</h3>
-      <p>(As Co-Author) <strong>Teerapong Panboonyuen</strong>, et al. <em>IEEE Access 2022</em></p>
-      <div class="buttons">
-        <a href="https://ieeexplore.ieee.org/document/9779212" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>Quality of Life Prediction in Driving Scenes</h3>
-      <p>(As Co-Author) <strong>Teerapong Panboonyuen</strong>, et al. <em>Sustainability 2023</em></p>
-      <div class="buttons">
-        <a href="https://www.mdpi.com/2071-1050/15/3/2847" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>Landslide Susceptibility Mapping in Uttaradit</h3>
-      <p>(As Co-Author) <strong>Teerapong Panboonyuen</strong>, et al. <em>GIS‑IDEAS 2024</em></p>
-      <div class="buttons">
-        <a href="https://gis-ideas.org/2024" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>DOTA: Deformable Optimized Transformer Architecture</h3>
-      <p>(As Co-Author) <strong>Teerapong Panboonyuen</strong>, et al. <em>KST 2025</em></p>
-      <div class="buttons">
-        <a href="https://ieeexplore.ieee.org/document/10456962" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>AI-Augmented Formal Verification with ENGRU</h3>
-      <p>(As Co-Author) <strong>Teerapong Panboonyuen</strong>, et al. <em>IEEE Access 2025</em></p>
-      <div class="buttons">
-        <a href="https://ieeexplore.ieee.org/document/12345678" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-    <div class="pub">
-      <h3>Investigating the use of AI-derived weighted mean temperature for GPS-PWVs estimation</h3>
-      <p>(As Co-Author) <strong>Teerapong Panboonyuen</strong>, et al. <em>Journal of Spatial Science 2025</em></p>
-      <div class="buttons">
-        <a href="https://www.tandfonline.com/doi/abs/10.1080/14498596.2025.2506695" target="_blank">PDF</a>
-        <a href="https://github.com/kaopanboonyuen" target="_blank">CODE</a>
-        <a href="https://kaopanboonyuen.github.io/" target="_blank">PROJECT</a>
-        <!-- <a href="https://scholar.google.co.th/citations?user=myy0qDgAAAAJ&hl=en" target="_blank">CITE</a> -->
-      </div>
-    </div>
-
-
-    <style>
-      .publications {
-        max-width: 960px;
-        margin: auto;
-      }
-
-      .pub {
-        margin-bottom: 2rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid #e5e7eb;
-      }
-
-      .pub h3 {
-        font-size: 1.25rem;
-        margin: 0 0 0.5rem;
-        font-weight: 600;
-      }
-
-      .pub p {
-        font-size: 1rem;
-        margin: 0 0 0.75rem;
-        color: #4b5563;
-      }
-
-      .buttons a {
-        display: inline-block;
-        padding: 0.4rem 1.2rem;
-        margin-right: 0.5rem;
-        border: 1px solid #000;
-        border-radius: 0.375rem;
-        text-decoration: none;
-        color: #000;
-        font-size: 0.9rem;
-        font-weight: 500;
-        transition: background-color 0.2s;
-      }
-
-      .buttons a:hover {
-        background-color: #dedede;
-      }
-    </style>
-
-    <!-- Hashtag Section -->
-    <div
-      style="margin-top: 2rem; padding: 1.5rem; background: #f0f4f8; border-left: 4px solid #47494c; border-radius: 0.5rem;">
-      <p style="font-weight: 600; font-size: 1rem; color: #4e5058; margin-bottom: 0.5rem;">
-        🔖 Related Keywords:
-      </p>
-      <p
-        style="color: #374151; line-height: 1.8; font-size: 0.95rem; transition: color 0.3s ease, background-color 0.3s ease;">
-        <span class="hashtag" style="transition: color 0.3s ease;">#TeerapongPanboonyuen</span>
-        &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#DrKao</span>
-        &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#ChulalongkornUniversity</span>
-        &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#AIResearcher</span>
-        &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#ComputerVision</span>
-        &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#RemoteSensing</span>
-        &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#GeospatialIntelligence</span>
-        &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#HumanAIInteraction</span>
-        &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#MARSAIL</span>
-        &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#C2FPostdoc</span>
-        &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#GYSS2025</span>
-        &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#MYRIDA</span>
-        &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#AIThailand</span>
-        <br />
-        <span class="hashtag" style="transition: color 0.3s ease;">#ธีรพงศ์-ปานบุญยืน</span>
-        &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#ธีรพงศ์</span>
-        &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#ปานบุญยืน</span>
-        &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#ดร-เก้า</span>
-        &nbsp; <span class="hashtag" style="transition: color 0.3s ease;">#ดร-ธีรพงศ์-ปานบุญยืน</span>
-      </p>
-    </div>
 
     <!-- Add these styles to your CSS file or inline -->
     <style>
@@ -906,7 +856,7 @@
       }
     </style>
 
-    <div style="display: flex; justify-content: center; margin-top: 3rem; padding: 0 1rem;">
+    <!-- <div style="display: flex; justify-content: center; margin-top: 3rem; padding: 0 1rem;">
       <img src="img/MYRIDA.png" alt="MYRIDA" style="
       width: 100%;
       max-width: 480px;
@@ -917,7 +867,52 @@
     " onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 12px 36px rgba(0,0,0,0.25)';"
         onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)';"
         onclick="startGame()" />
-    </div>
+    </div> -->
+
+
+
+<!-- Game Invite Section -->
+<section class="game-section" id="play">
+  <div class="game-card">
+    <div class="game-emoji" aria-hidden="true">🦤</div>
+    <h2>Wanna play a quick AI math game?</h2>
+    <p class="game-subtitle">
+      Sharpen your mind in 60 seconds. Simple, fast, and fun — powered by MYRIDA.
+    </p>
+
+    <button class="game-button" type="button" onclick="startGame()" aria-label="Start the AI Math Game">
+      ▶ Start Game
+    </button>
+
+    <!-- This message will stay even if the game closes -->
+    <p class="game-note" id="gameStatus" role="status" aria-live="polite"></p>
+
+    <noscript>
+      <p class="game-noscript">
+        Please enable JavaScript to play the game.
+      </p>
+    </noscript>
+  </div>
+</section>
+
+<!-- Link to myrida-ai-math-game.js file -->
+<script src="myrida-ai-math-game.js" defer></script>
+
+<script>
+  // Add "Launching game…" message when Start button is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const gameBtn = document.querySelector(".game-button");
+    const gameStatus = document.getElementById("gameStatus");
+
+    if (gameBtn && gameStatus) {
+      gameBtn.addEventListener("click", () => {
+        gameStatus.textContent = "🚀 Launching game…";
+        // startGame() is triggered inline by the button itself
+      });
+    }
+  });
+</script>
+
 
     <footer class="section" style="text-align: center; font-size: 0.9rem; color: #6b7280">
       &copy; 2025 MYRIDA. All rights reserved.

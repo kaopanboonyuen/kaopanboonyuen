@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://myrida.pages.dev/sitemap.xml
+Sitemap: https://myridatech.github.io/sitemap.xml
