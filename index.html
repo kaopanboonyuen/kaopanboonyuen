@@ -175,6 +175,8 @@
 
 
 
+
+
 .spotlight {
   background: #fff;
   padding: 4rem 2rem;
@@ -228,25 +230,36 @@
 
 /* CTA (Call to Action) Buttons */
 .cta a {
-  display: inline-block;
-  margin-right: 0.8rem;
-  margin-bottom: 0.6rem;
-  padding: 0.6rem 1.2rem;
-  border: 1px solid var(--text);
-  border-radius: 0.5rem;
-  font-weight: 600;
+  display: inline-flex;          /* flex container */
+  justify-content: center;       /* center horizontally */
+  align-items: center;           /* center vertically */
+  text-align: center;            /* center text */
+  padding: 0.9rem 1.8rem;
+  background: #111;
+  color: #fff;
+  border: 2px solid #111;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  cursor: pointer;
   text-decoration: none;
-  color: var(--text);
-  transition: all 0.2s ease;
-  max-width: 100%; /* Prevent overflow */
-  width: auto; /* Let the button resize dynamically */
-  box-sizing: border-box; /* Include padding in width calculation */
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  max-width: 100%;
+  width: auto;
 }
 
-/* .cta a:hover {
-  background: var(--text);
-  color: #fff;
-} */
+.cta a:hover {
+  background: #fff;
+  color: #111;
+}
+
+.cta a:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.15);
+}
+
 
 /* Mobile-first: Make adjustments for smaller screens (mobile/tablet) */
 @media (max-width: 768px) {
@@ -282,12 +295,36 @@
   }
 
   .cta a {
-    width: 100%; /* Make buttons full-width on mobile */
-    padding: 0.8rem 1.5rem; /* Larger buttons on mobile */
-    box-sizing: border-box; /* Ensure padding doesn't overflow */
-    margin: 0 auto; /* Center the buttons */
-  }
-  
+  display: inline-flex;          /* flex container */
+  justify-content: center;       /* center horizontally */
+  align-items: center;           /* center vertically */
+  text-align: center;            /* center text */
+  padding: 0.9rem 1.8rem;
+  background: #111;
+  color: #fff;
+  border: 2px solid #111;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  max-width: 100%;
+  width: auto;
+}
+
+.cta a:hover {
+  background: #fff;
+  color: #111;
+}
+
+.cta a:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.15);
+}
+
 
 }
 
@@ -298,6 +335,7 @@
     margin-bottom: 0.6rem;
   }
 }
+
 
 
 
@@ -421,7 +459,7 @@
   object-fit: cover;
   border-radius: 50%;
   /* border: 4px solid #e5e7eb; */
-  /* margin-bottom: 1.25rem; */
+  margin-bottom: 2rem;
 }
 
 /* Title */
@@ -430,7 +468,7 @@
   font-size: 1.25rem;
   font-weight: 600;
   color: #4b5563;
-  margin-bottom: 2em;
+  margin-bottom: 2rem;
 }
 
 /* Name */
@@ -501,6 +539,11 @@
 
 
 
+
+.highlight-darkgray {
+  font-weight: 700;
+  color: #333333;
+}
 
 
 
@@ -680,7 +723,7 @@
 
 
       <!-- <p class="bio-degree">Ph.D. in Computer Engineering, Chulalongkorn University</p> -->
-      <p class="bio-text">
+      <!-- <p class="bio-text">
         ดร.ธีรพงศ์ ปานบุญยืน หรือที่รู้จักกันในชื่อ “ดร.เก้า” เป็นนักวิจัยผู้มีความเชี่ยวชาญด้านปัญญาประดิษฐ์
       โดยปัจจุบันดำรงตำแหน่งนักวิจัยหลักที่ MARSAIL (Motor AI Recognition Solution Artificial Intelligence Laboratory)
       ซึ่งเป็นห้องปฏิบัติการวิจัยแนวหน้าที่บูรณาการเทคโนโลยี AI กับอุตสาหกรรมประกันภัยรถยนต์<br /><br />
@@ -694,7 +737,7 @@
       ซึ่งสะท้อนถึงศักยภาพและความมุ่งมั่นในเส้นทางวิชาการอย่างชัดเจน<br /><br />
       นอกจากนี้ ดร.เก้ายังได้รับการสนับสนุนทุนระดับสูงสุดจากโครงการ The Second Century Fund (C2F) ใน Track A
       สำหรับนักวิจัยหลังปริญญาเอกศักยภาพสูง ของจุฬาลงกรณ์มหาวิทยาลัย
-      เพื่อสนับสนุนการวิจัยที่มีอิทธิพลและสร้างผลกระทบต่อวงการเทคโนโลยี AI/ML ในระดับโลก
+      เพื่อสนับสนุนการวิจัยที่มีอิทธิพลและสร้างผลกระทบต่อวงการเทคโนโลยี AI ในระดับโลก
       และเป็นหนึ่งในนักวิจัยไทยที่ได้รับพระมหากรุณาธิคุณรับพระราชทานทุน Global Young Scientists Summit (GYSS) ประจำปี
       2025 จากสมเด็จพระกนิษฐาธิราชเจ้า กรมสมเด็จพระเทพรัตนราชสุดาฯ<br /><br />
       ดร.เก้ามีความเชี่ยวชาญลึกซึ้งในสาขา Computer Vision ที่ประยุกต์ใช้กับการรู้จำวัตถุ ซีน
@@ -704,7 +747,38 @@
       ซึ่งเป็นหัวใจสำคัญของการสร้างเทคโนโลยีที่เข้าใจและสื่อสารกับมนุษย์ได้อย่างมีประสิทธิภาพ
       ด้วยผลงานที่โดดเด่นและวิสัยทัศน์เชิงลึกในอนาคตของ AI
       ดร.เก้าจึงเป็นหนึ่งในนักวิจัยรุ่นใหม่ที่ได้รับการจับตามองอย่างยิ่งในวงการวิทยาการคอมพิวเตอร์ระดับสากล
-      </p>
+      </p> -->
+
+      <p class="bio-text">
+  ดร.<strong style="color: #333333;">ธีรพงศ์ ปานบุญยืน</strong> หรือที่รู้จักกันในชื่อ <strong style="color: #333333;">“ดร.เก้า”</strong> เป็น <strong style="color: #333333;">นักวิจัยผู้มีความเชี่ยวชาญด้านปัญญาประดิษฐ์</strong>  
+  โดยปัจจุบันดำรงตำแหน่ง <strong style="color: #333333;">นักวิจัยหลักที่ MARSAIL</strong> (Motor AI Recognition Solution Artificial Intelligence Laboratory)  
+  ซึ่งเป็น <strong style="color: #333333;">ห้องปฏิบัติการวิจัยแนวหน้าที่บูรณาการเทคโนโลยี AI กับอุตสาหกรรมประกันภัยรถยนต์</strong><br /><br />
+
+  ในด้านการศึกษา ดร.เก้า สำเร็จการศึกษาระดับ <strong style="color: #333333;">ปริญญาเอก สาขาวิศวกรรมคอมพิวเตอร์ (วิศวกรรมศาสตรดุษฎีบัณฑิต)</strong>  
+  จาก <strong style="color: #333333;">จุฬาลงกรณ์มหาวิทยาลัย</strong> โดยใช้ระยะเวลาเพียง <strong style="color: #333333;">2 ปีครึ่ง</strong> ภายใต้การสนับสนุน  
+  <strong style="color: #333333;">ทุนการศึกษาหลักสูตรดุษฎีบัณฑิต 100 ปีจุฬาลงกรณ์มหาวิทยาลัย</strong> และ <strong style="color: #333333;">ทุน 90 ปีจุฬาลงกรณ์มหาวิทยาลัย</strong>  
+  ก่อนหน้านี้ สำเร็จการศึกษาระดับ <strong style="color: #333333;">ปริญญาโท</strong> ในสาขาเดียวกันจากจุฬาลงกรณ์มหาวิทยาลัยเช่นกัน ภายในระยะเวลา  
+  <strong style="color: #333333;">1 ปีครึ่ง</strong> ภายใต้ <strong style="color: #333333;">ทุนอุดหนุนการศึกษาระดับบัณฑิตศึกษาจุฬาลงกรณ์มหาวิทยาลัย</strong>  
+  เพื่อเฉลิมฉลองวโรกาสที่พระบาทสมเด็จพระเจ้าอยู่หัวทรงเจริญพระชนมายุครบ <strong style="color: #333333;">72 พรรษา</strong>  
+  โดยสำเร็จการศึกษาระดับปริญญาเอกได้ในวัยเพียง <strong style="color: #333333;">27 ปี</strong>  
+  ซึ่งสะท้อนถึง <strong style="color: #333333;">ศักยภาพและความมุ่งมั่นในเส้นทางวิชาการอย่างชัดเจน</strong><br /><br />
+
+  นอกจากนี้ ดร.เก้ายังได้รับการสนับสนุน <strong style="color: #333333;">ทุนระดับสูงสุด</strong> จากโครงการ <strong style="color: #333333;">The Second Century Fund (C2F) ใน Track A</strong>  
+  สำหรับนักวิจัยหลังปริญญาเอกศักยภาพสูง ของจุฬาลงกรณ์มหาวิทยาลัย  
+  เพื่อสนับสนุนการวิจัยที่มี <strong style="color: #333333;">อิทธิพลและสร้างผลกระทบต่อวงการเทคโนโลยี AI ในระดับโลก</strong>  
+  และเป็นหนึ่งในนักวิจัยไทยที่ได้รับพระมหากรุณาธิคุณรับพระราชทานทุน <strong style="color: #333333;">Global Young Scientists Summit (GYSS) ประจำปี 2025</strong>  
+  จาก <strong style="color: #333333;">สมเด็จพระกนิษฐาธิราชเจ้า กรมสมเด็จพระเทพรัตนราชสุดาฯ</strong><br /><br />
+
+  ดร.เก้ามีความเชี่ยวชาญลึกซึ้งในสาขา <strong style="color: #333333;">Computer Vision</strong> ที่ประยุกต์ใช้กับการรู้จำวัตถุ ซีน  
+  และความเข้าใจเชิงความหมายของภาพ รวมถึง <strong style="color: #333333;">Geospatial Intelligence</strong>  
+  ที่วิเคราะห์ข้อมูลจากดาวเทียมและภาพถ่ายทางอากาศเพื่อสนับสนุนการตัดสินใจเชิงพื้นที่  
+  อีกทั้งยังให้ความสำคัญกับ <strong style="color: #333333;">Human-AI Interaction</strong>  
+  ซึ่งเป็นหัวใจสำคัญของการสร้างเทคโนโลยีที่เข้าใจและสื่อสารกับมนุษย์ได้อย่างมีประสิทธิภาพ  
+  ด้วยผลงานที่ <strong style="color: #333333;">โดดเด่นและวิสัยทัศน์เชิงลึกในอนาคตของ AI</strong>  
+  ดร.เก้าจึงเป็นหนึ่งในนักวิจัยรุ่นใหม่ที่ได้รับการจับตามองอย่างยิ่งใน <strong style="color: #333333;">วงการวิทยาการคอมพิวเตอร์ระดับสากล</strong>
+</p>
+
+     
     </div>
 
     <!-- English content -->
@@ -717,7 +791,7 @@
       <!-- <p class="bio-degree">Ph.D. in Computer Engineering, Chulalongkorn University</p> -->
        <h4 class="bio-title">Founder & Principal Investigator, MYRIDA</h4>
 
-      <p class="bio-text">
+      <!-- <p class="bio-text">
         Dr. Teerapong Panboonyuen, also known as “Dr. Kao,” is a leading researcher in the field of Artificial
         Intelligence. He currently serves as the Principal Researcher at MARSAIL (Motor AI Recognition Solution
         Artificial Intelligence Laboratory), an advanced AI research lab integrating AI into the automotive industry and
@@ -730,7 +804,7 @@
         Majesty the King. Notably, Dr. Kao completed his doctoral degree at the age of 27, reflecting his outstanding
         academic capability and unwavering dedication.<br /><br />
         He has been awarded the highest-level postdoctoral research fellowship under the Second Century Fund (C2F Track
-        A) from Chulalongkorn University, supporting high-impact research in AI/ML with global significance. He is also
+        A) from Chulalongkorn University, supporting high-impact research in AI with global significance. He is also
         among the few Thai researchers to receive the prestigious Global Young Scientists Summit (GYSS) 2025
         scholarship, graciously bestowed by Her Royal Highness Princess Maha Chakri Sirindhorn.<br /><br />
         Dr. Kao's expertise lies in Computer Vision—covering object recognition, scene understanding, and semantic
@@ -738,7 +812,31 @@
         decision-making. He also focuses on Human-AI Interaction, a vital component for developing AI technologies that
         can effectively understand and communicate with humans. With his outstanding contributions and forward-looking
         vision, Dr. Kao is recognized as a rising figure in the international AI research community.
-      </p>
+      </p> -->
+
+<p class="bio-text">
+  Dr. <strong style="color: #333333;">Teerapong Panboonyuen</strong>, also known as <strong style="color: #333333;">“Dr. Kao,”</strong> is a <strong style="color: #333333;">leading researcher in the field of Artificial Intelligence</strong>.  
+  He currently serves as the <strong style="color: #333333;">Principal Researcher at MARSAIL</strong> (Motor AI Recognition Solution Artificial Intelligence Laboratory),  
+  an <strong style="color: #333333;">advanced AI research lab</strong> integrating AI into the automotive industry and car insurance.<br /><br />
+
+  In terms of academic background, Dr. Kao completed his <strong style="color: #333333;">Ph.D. in Computer Engineering (Doctor of Engineering)</strong> at  
+  <strong style="color: #333333;">Chulalongkorn University</strong> in just <strong style="color: #333333;">two and a half years</strong>.  
+  His doctoral studies were supported by the <strong style="color: #333333;">100th Anniversary Chulalongkorn University Doctoral Scholarship</strong> and the  
+  <strong style="color: #333333;">90th Anniversary of Chulalongkorn University Scholarship</strong>. Prior to that, he earned his <strong style="color: #333333;">Master’s degree</strong> in the same field  
+  from Chulalongkorn University within <strong style="color: #333333;">one and a half years</strong>, under the <strong style="color: #333333;">Graduate Scholarship in Celebration of the 72nd Birthday Anniversary of His Majesty the King</strong>.  
+  Notably, Dr. Kao completed his doctoral degree at the age of <strong style="color: #333333;">27</strong>, reflecting his <strong style="color: #333333;">outstanding academic capability and unwavering dedication</strong>.<br /><br />
+
+  He has been awarded the <strong style="color: #333333;">highest-level postdoctoral research fellowship</strong> under the <strong style="color: #333333;">Second Century Fund (C2F Track A)</strong> from Chulalongkorn University,  
+  supporting <strong style="color: #333333;">high-impact research in AI with global significance</strong>. He is also among the few Thai researchers to receive the prestigious  
+  <strong style="color: #333333;">Global Young Scientists Summit (GYSS) 2025 scholarship</strong>, graciously bestowed by <strong style="color: #333333;">Her Royal Highness Princess Maha Chakri Sirindhorn</strong>.<br /><br />
+
+  Dr. Kao's expertise lies in <strong style="color: #333333;">Computer Vision</strong>—covering object recognition, scene understanding, and semantic perception—and in  
+  <strong style="color: #333333;">Geospatial Intelligence</strong> for analyzing satellite and aerial imagery to support spatial decision-making.  
+  He also focuses on <strong style="color: #333333;">Human-AI Interaction</strong>, a vital component for developing AI technologies that can effectively understand and communicate with humans.  
+  With his <strong style="color: #333333;">outstanding contributions and forward-looking vision</strong>, Dr. Kao is recognized as a <strong style="color: #333333;">rising figure in the international AI research community</strong>.
+</p>
+
+
     </div>
 
    <!-- Profile Button -->
