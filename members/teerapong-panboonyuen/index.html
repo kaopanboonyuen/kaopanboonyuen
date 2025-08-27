@@ -218,6 +218,19 @@
 }
 
 
+/* Image inside the button */
+.back-arrow-icon {
+  height: 1.5em;
+  vertical-align: middle;
+  margin-right: 0.3em;
+  filter: invert(1); /* Makes dark arrow visible on dark background */
+  transition: filter 0.3s ease;
+}
+
+/* When button is hovered, background changes, so invert is removed */
+.game-button:hover .back-arrow-icon {
+  filter: invert(0);
+}
 
 
   </style>
@@ -229,9 +242,11 @@
 <!-- TOP LEFT BACK BUTTON -->
 <div class="back-top-left">
   <button class="game-button" type="button" onclick="window.location.href='/'" aria-label="Back to main page">
-    ← Back to 🦤 MYRIDA
+    <img src="../../img/public_svg_png/back-arrow_3298670.png" alt="Back arrow" class="back-arrow-icon">
+    Back to 🦤 MYRIDA
   </button>
 </div>
+
 
 
   <header>
@@ -366,7 +381,8 @@
 <!-- BACK TO HOME BUTTON -->
 <div class="back-link">
   <button class="game-button" type="button" onclick="window.location.href='/'" aria-label="Back to Home">
-    ← Back to 🦤 MYRIDA
+    <img src="../../img/public_svg_png/back-arrow_3298670.png" alt="Back arrow" class="back-arrow-icon">
+    Back to 🦤 MYRIDA
   </button>
 </div>
 
