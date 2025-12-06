@@ -1,1 +1,1 @@
-🌱 About Kao PBY: [https://kaopanboonyuen.github.io/](https://kaopanboonyuen.github.io/)
+🌱 About PBY: [https://kaopanboonyuen.github.io/](https://kaopanboonyuen.github.io/)
