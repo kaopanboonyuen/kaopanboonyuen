@@ -1,1 +1,1 @@
-🌱 Inner Vibe: [kaopanboonyuen.github.io](https://kaopanboonyuen.github.io/)
+🌱 About Kao PBY: [https://kaopanboonyuen.github.io/](https://kaopanboonyuen.github.io/)
