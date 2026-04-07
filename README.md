@@ -7,4 +7,4 @@ I currently serve as (1) a **Senior Research Scientist & Consultant at [MARSAIL]
 ## Contact
 - Personal Website: [kaopanboonyuen.github.io](https://kaopanboonyuen.github.io/)  
 - Twitter: [@kaopanboonyuen](https://twitter.com/kaopanboonyuen)  
-- Email: `my_first_name.my_last_name [at] gmail [dot] com`
+- Email: `teerapong [dot] panboonyuen [at] gmail [dot] com`
